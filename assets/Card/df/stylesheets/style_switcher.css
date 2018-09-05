@@ -1,0 +1,142 @@
+a.active {
+  background-color: #cecece;
+  color: #000;
+  opacity: 1;
+  border:1px solid #cecece;
+}
+#styles{
+	z-index:1;
+	position: relative;
+}
+#styleSwitcher {
+	padding: 10px;
+	position: fixed;
+	top: -8px;
+}
+#styleSwitcher span {
+	font-size: 10px;
+}
+#switcher_btn {
+	width: 33px;
+	height: 29px;
+	position: absolute;
+	right: -33px;
+	top: 30px;
+	background-image: url(images/switcher_button.html);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border-width: 0px;
+	background-color: transparent;
+	border-left: 1px solid #ced2d8;
+}
+#switcher_btn a {
+	outline:none;
+}
+.closed {
+	background-position: 0px -29px;
+}
+.color, .pattern {
+	width:20px;
+	height:20px;
+	display:block;
+	float:left;
+	margin-right:2px;
+	margin-left:2px;
+	margin-bottom:6px;
+	border:1px solid #ccc;
+}
+#styleSwitcher hr {
+	margin-bottom:10px;
+	margin-top:-2px;
+}
+#picker {
+	margin-bottom:10px;
+}
+ul#color li, ul#bkg_color li, ul#numbers li, ul#patterns li {
+	display:inline-block;
+	float:left;
+	list-style:none outside none;
+}
+ul#color li a, ul#numbers li a, ul#patterns li a {
+	border: 1px solid #666666;
+	display: inline-block;
+	height: 20px;
+	margin: 0 3px 0 0;
+	width: 20px;
+	text-align: center;
+	text-decoration: none;
+}
+ul#color li a, ul#bkg_color li a {
+	border:1px solid transparent;
+}
+
+li a.col01 {
+	background-color:#5AC8FB;
+}
+li a.col02 {
+	background-color:#5CD427;
+}
+li a.col03 {
+	background-color:#FF4A80;
+}
+li a.col04 {
+	background-color:#EE4DB5;
+}
+li a.col05 {
+	background-color:#DCDDDF;
+}
+
+#panel {
+	position:relative;
+	left:-155px;
+	left:0px;
+}
+.panel_button {
+  background-color: #333;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  left: 145px;
+  padding: 5px 5px 1px;
+  position: relative;
+  top: 23px;
+}
+#panel {
+  background: none repeat scroll 0 0 #333;
+  border-radius: 0 0 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  color: #999999;
+  font-size: 10px;
+  overflow: hidden;
+  padding: 9px 20px 15px 21px;
+  position: absolute;
+  width: 156px;
+}
+#panel .largeheading {
+	border-bottom: 1px solid #333333;
+	color: #9C9C9C;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 10px 0;
+	padding-bottom: 3px;
+}
+#panel .heading {
+	font-weight:bold;
+	font-family:Arial, sans-serif;
+}
+#panel .colorSelector, #panel .colorSelector2 {
+	border: 1px solid transparent;
+	margin-bottom: 16px;
+	width: 142px;
+}
+#panel .colorSelector div, #panel .colorSelector2 div {
+	height:22px;
+	width:114px;
+}
+#display_color a, #squema a {
+  display: block;
+  padding: 2px 6px;
+}
+#display_color li, #squema li{
+	margin-bottom: 4px;
+}

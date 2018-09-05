@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from inbasics.com/templates/display1.7/dark-background.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 May 2018 04:57:04 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>Display - The Final Countdown</title> <!-- Replace with your webpage title -->
+  <meta name="description" content="">
+  <meta name="author" content="gustavo-k">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'> <!-- Font for logo -->
+    <link rel="stylesheet" href="display_files/stylesheets/main.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="display_files/stylesheets/skin.css">
+    <link rel="stylesheet" type="text/css" href="display_files/stylesheets/style_switcher.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="display_files/stylesheets/colorpicker.css" />
+  </head>
+  <body>
+    <!-- MAIN CONTENT -->
+    <!-- Header
+    ================================================== -->
+    <header class="container">
+      <hgroup>
+      <h1 class="logo">Display <sm>The Final Countdown</sm></h1>
+      <h2>1-800-555-1234</h2>
+      </hgroup>
+    </header>
+    <!-- The countdown
+    ================================================== -->
+    <section class="container box_bkg">
+      <header>
+        <h2>We are Under Construction</h2> <!-- Replace "We are under construction" with your text -->
+      </header>
+      <article>
+        <div class="tagline">Estimated time remaining:</div> <!-- Replace "Estimated time remaining:" with your text -->
+        <div id="counter">
+        </div>
+      </article>
+      <footer>
+        <h3>The expected launch date is <span class="date"></span></h3> <!-- Replace "The expected launch date is <span class="date"></span>" with your text. Inside <span class="date"></span> jquery writes the countdown date selected. -->
+      </footer>
+    </section>
+    <!-- Connect
+    ================================================== -->
+       <section class="connect">
+        <div id="contact">
+          <!-- email form -->
+          <h4>Subscribe to get notified when we launch.</h4> <!-- Replace "Subscribe to get notified when we launch" with your text -->
+          <form id="newsletterForm" name="contact">
+            <div class="email_input">
+              <input type="text" name="email" id="email" class="email" value="Your email" onFocus="this.value=''" />
+            </div>
+            <div class="sendbutton">
+              <input type="submit" value="Send" name="submit" id="submit"/>
+            </div>
+            <!-- Subscribe messages
+            ================================================= -->
+            <p class="msg send_ok">Subscribe Successfully!</p> <!-- Text when the email was sent succefully -->
+            <p class="msg send_error">Error sending the message. Try again later.</p> <!-- Text when the email was not sent succefully -->
+            <p class="msg email_error">Please enter a valid email address.</p>  <!-- Text when the email is not valid -->
+            <!-- End of Subscribe messages
+            ================================================= -->
+          </form>
+          <!-- End of email form -->
+        </div>
+        <!-- Social Network
+        ============================================= -->
+        <div id="social">
+          <h4>Stay in touch</h4><!-- Replace "Stay in touch" with your text -->
+          <ul>
+            <li><a href="#"><img src="display_files/images/facebook.png" alt="facebook" title="facebook" /></a></li> <!-- Replace # below with link to your Facebook account -->
+            <li><a href="#"><img src="display_files/images/twitter.png" alt="twitter" title="twitter" /></a></li> <!-- Replace # below with link to your Twitter account-->
+            <li><a href="#"><img src="display_files/images/youtube.png" alt="youtube" title="youtube" /></a></li> <!-- Replace # below with link to your Youtube account-->
+            <li><a href="#"><img src="display_files/images/linkedin.png" alt="linkedin" title="linkedin" /></a></li><!-- Replace # below with link to your Linkedin account-->
+            <li><a href="#"><img src="display_files/images/flickr.png" alt="flickr" title="flickr" /></a></li><!-- Replace # below with link to your Flickr account-->
+            <li><a href="#"><img src="display_files/images/skype.png" alt="skype" title="skype" /></a></li><!-- Replace # below with link to your Skype account-->
+          </ul>
+          <!-- End of Social Network
+          ============================================= -->
+        </div>
+      </section>
+      <!-- Copyright and contact data
+      ============================================= -->
+      <div id="copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> - DISPLAY - THE FINAL COUNTDOWN -  Address Company - Country - templates@inbasics.com</p> <!-- Repalce with your copyright text and contact data. -->
+      </div>
+      <!-- End of Copyright and contact data
+      ============================================= -->
+      <!-- End Document
+      ================================================== -->
+      <div id="styles">
+        <div id="styleSwitcher">
+          <div id="panel">
+            <input type="button" id="switcher_btn" value="" />
+            <div class="largeheading">Numbers</div>
+            <span>Type:</span>
+            <ul id="numbers">
+              <li><a class="active" href="#" rel="1">1</a></li>
+              <li><a href="#" rel="2">2</a></li>
+              <li><a href="#" rel="3">3</a></li>
+              <li><a href="#" rel="4">4</a></li>
+              <li><a href="#" rel="5">5</a></li>
+              <li><a href="#" rel="6">6</a></li>
+              <li><a href="#" rel="7">7</a></li>
+              <li><a href="#" rel="8">8</a></li>
+              <li><a href="#" rel="9">9</a></li>
+              <li><a href="#" rel="10">10</a></li>
+            </ul>
+            <span>Color:</span>
+            <ul id="color">
+              <li><a class="col01" href="#" rel="00e0dc"></a></li>
+              <li><a class="col02" href="#" rel="00ff40"></a></li>
+              <li><a class="col03" href="#" rel="ffffff"></a></li>
+              <li><a class="col04" href="#" rel="ff00d0"></a></li>
+              <li><a class="col05" href="#" rel="00ccff"></a></li>
+            </ul>
+            <span>Custom</span>
+            <div class="colorSelector2">
+              <div style="background-color: #00CCFF"></div>
+            </div>
+            <div class="largeheading">Display Color</div>
+            <ul id="display_color">
+              <li><a class="active" href="#" rel="black">Black</a></li>
+              <li><a href="#" rel="white">White</a></li>
+            </ul>
+            <div class="largeheading">Squema</div>
+            <ul id="squema">
+              <li><a class="active" href="#" rel="dark">Dark</a></li>
+              <li><a href="#" rel="light">Light</a></li>
+              <li><a href="#" rel="image">Image</a></li>
+            </ul>
+            <div class="largeheading">Background</div>
+            <ul id="patterns">
+              <li><a class="active" href="#" rel="01">1</a></li>
+              <li><a href="#" rel="02">2</a></li>
+              <li><a href="#" rel="03">3</a></li>
+              <li><a href="#" rel="04">4</a></li>
+              <li><a href="#" rel="05">5</a></li>
+              <li><a href="#" rel="06">6</a></li>
+              <li><a href="#" rel="07">7</a></li>
+              <li><a href="#" rel="08">8</a></li>
+            </ul>
+          </div>
+          <div class="panel_button" style="display: none;"><img src="display_files/images/collapse.png"  alt="expand"/></div>
+          <div class="panel_button hide_button" style="display: visible;"><img src="display_files/images/collapse.png" alt="collapse" /> </div>
+        </div>
+      </div>
+      <script src="js/color-picker-slider.html" type="text/javascript"></script>
+      <!-- ==== JS ============================================= -->
+      <script type="text/javascript" src="display_files/js/libs/jquery-1.11.1.min.js"></script> <!-- jQuery -->
+      <script type="text/javascript" src="display_files/js/libs/jquery.plugin.min.js"></script> <!-- Countdown plugin -->
+      <script type="text/javascript" src="display_files/js/libs/jquery.easing.min.js"></script> <!-- Easing for background slider -->
+      <script type="text/javascript" src="display_files/js/libs/supersized.3.2.7.min.js"></script> <!-- Background slider -->
+      <script type="text/javascript" src="display_files/js/libs/jquery.plugin.min.js"></script> <!-- Countdown plugin -->
+      <script type="text/javascript" src="display_files/js/libs/jquery.countdown.min.js"></script> <!-- Countdown -->
+      <!-- Localisation
+      ==================================================
+      You can localise the countdown for other languages and regional differences. You need to load the appropriate language package, which adds a language set. Uncomment next line and use apropiate regional code es=Spanish, de=German, fr=French, nl=Dutch, pt=Portuguese. -->
+      <!-- <script type="text/javascript" src="display_files/js/libs/localisation/jquery.countdown-fr.js"></script> -->
+      <!-- Another localisation packages are available for download at http://keith-wood.name/countdown.html, localisation tab.-->
+      <!-- End Localisation
+      ================================================== -->
+      <script src="display_files/js/libs/colorpicker.js"></script>
+      <script type="text/javascript" src="display_files/js/config.js"></script> <!-- Options -->
+      <script type="text/javascript" src="display_files/js/main.js"></script> <!-- Main Display js -->
+      <script type="text/javascript" src="display_files/js/analytics.js"></script> <!-- Google Analytics -->
+    </body>
+  
+<!-- Mirrored from inbasics.com/templates/display1.7/dark-background.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 May 2018 04:57:17 GMT -->
+</html>

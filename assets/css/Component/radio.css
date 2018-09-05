@@ -1,0 +1,54 @@
+#radios{
+  position:relative;
+  width:50%;
+  margin:0 auto;
+}
+#radios input[type="radio"]{
+  position:absolute;
+  right:1000%;
+}
+#radios label{
+  float:left;
+  width:15%; padding-bottom:15%;
+  margin:0 2.5%;
+  background:rgba(255,255,255,.2);
+  border-radius:50%;
+  cursor:pointer;
+}
+#radios #slider{
+  position:absolute;
+  left:0%; top:0;
+  width:10%; padding-bottom:10%;
+  margin:2.5% 0 0 5%;
+  background:#fff;
+  -webkit-transition:-webkit-transform 1s;
+  transition:-webkit-transform 1s;
+  transition:transform 1s;
+  transition:transform 1s, -webkit-transform 1s;
+  border-radius:50%;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration:.3s;
+          animation-duration:.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition:0.2s left .05s ease-in-out;
+  transition: 0.2s left .05s ease-in-out;
+}
+#radios #input1:checked  ~ #slider{ -webkit-animation-name: input1; animation-name: input1; left:0; }
+#radios #input2:checked  ~ #slider{ -webkit-animation-name: input2; animation-name: input2; left:20%; }
+#radios #input3:checked  ~ #slider{ -webkit-animation-name: input3; animation-name: input3; left:40%; }
+#radios #input4:checked  ~ #slider{ -webkit-animation-name: input4; animation-name: input4; left:60%; }
+#radios #input5:checked  ~ #slider{ -webkit-animation-name: input5; animation-name: input5; left:80%; }
+
+@-webkit-keyframes input1{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+
+@keyframes input1{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@-webkit-keyframes input2{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@keyframes input2{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@-webkit-keyframes input3{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@keyframes input3{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@-webkit-keyframes input4{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@keyframes input4{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@-webkit-keyframes input5{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }
+@keyframes input5{ 30%, 70% { -webkit-transform:scale(0.5); transform:scale(0.5); } }

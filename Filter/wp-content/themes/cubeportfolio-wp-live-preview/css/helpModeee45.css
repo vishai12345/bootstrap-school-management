@@ -1,0 +1,231 @@
+/*	--------------------------------------------
+			Default style for plugin.
+	-------------------------------------------- */
+.hm-wrap,
+.hm-container {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    z-index: 9990;
+}
+
+.hm-wrap.hm-active {
+    z-index: 9991;
+}
+
+.hm-container {
+    border-radius: 2px;
+}
+
+/*	END - Default style for plugin. */
+
+/*	--------------------------------------------
+					PANEL
+	-------------------------------------------- */
+.hm-panel {
+    opacity: 0;
+    background-color: #23A86D;
+    padding: 13px;
+    position: absolute;
+    margin: 0;
+    border-radius: 2px;
+
+    -webkit-transition: opacity .35s ease;
+    transition: opacity .35s ease;
+}
+
+.hm-active .hm-panel {
+    opacity: 1;
+}
+
+.hm-header {
+    font: 12px/18px sans-serif;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.hm-body {
+    width: 200px;
+    color: #fff;
+    font: 11px/14px sans-serif
+}
+
+/*	END - PANEL */
+
+/*	--------------------------------------------
+				ANIMATION EFFECT
+	-------------------------------------------- */
+.hm-animation-fade {
+    -webkit-transition: opacity .35s ease-in-out;
+    transition: opacity .35s ease-in-out;
+}
+
+.hm-animation-fade .hm-panel {
+    visibility: hidden;
+}
+
+.hm-animation-fade.hm-active .hm-panel {
+    visibility: visible;
+}
+
+.hm-animation-expand .hm-container {
+    overflow: hidden;
+
+    -webkit-transition: width .35s ease-in-out, height .35s ease-in-out, top .35s ease-in-out, left .35s ease-in-out;
+    transition: width .35s ease-in-out, height .35s ease-in-out, top .35s ease-in-out, left .35s ease-in-out;
+}
+
+/*	END - ANIMATION EFFECT */
+
+/*	--------------------------------------------
+				ANIMATION DIRECTION
+	-------------------------------------------- */
+/* bottom-right*/
+.hm-direction-br .hm-panel {
+    top: 0;
+    left: 0;
+}
+
+/* bottom left */
+.hm-direction-bl .hm-panel {
+    top: 0;
+    right: 0;
+}
+
+/* top-right*/
+.hm-direction-tr .hm-panel {
+    bottom: 0;
+    left: 0;
+}
+
+/* top left */
+.hm-direction-tl .hm-panel {
+    bottom: 0;
+    right: 0;
+}
+
+/*	END - ANIMATION DIRECTION */
+
+/*	--------------------------------------------
+					ARROW
+	-------------------------------------------- */
+/* top arrow */
+.hm-arrow-top {
+}
+
+.hm-arrow-top:before {
+    border-bottom: 6px solid #23A86D;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 0;
+}
+
+/* bottom arrow */
+.hm-arrow-bottom {
+}
+
+.hm-arrow-bottom:before {
+    border-top: 6px solid #23A86D;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    width: 0;
+}
+
+/* left arrow */
+.hm-arrow-left {
+}
+
+.hm-arrow-left:before {
+    border-right: 6px solid #23A86D;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    content: "";
+    height: 0;
+    top: 0;
+    margin: auto 0;
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 0;
+}
+
+/* right arrow */
+.hm-arrow-right {
+}
+
+.hm-arrow-right:before {
+    border-left: 6px solid #23A86D;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    content: "";
+    height: 0;
+    top: 0;
+    margin: auto 0;
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    width: 0;
+}
+
+/*	END - ARROW */
+
+/*  --------------------------------------------
+    helpMode override default stylesheet
+    -------------------------------------------- */
+.hm-wrap, .hm-container {
+    height: 13px;
+    width: 12px;
+}
+
+.hm-wrap {
+    margin-left: 6px;
+}
+
+.hm-container {
+    background: url("../img/info.png") no-repeat scroll center bottom transparent;
+    position: absolute;
+}
+
+.hm-panel {
+    background-color: #515151;
+    border-radius: 3px 3px 3px 3px;
+    margin: 12px;
+    opacity: 0;
+    padding: 13px;
+    position: absolute;
+    transition: opacity 0.35s ease 0s;
+}
+
+.hm-header {
+    color: #FFFFFF;
+    font: 12px/18px sans-serif;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.hm-body {
+    color: #FFFFFF;
+    font: 11px/14px sans-serif;
+    width: 200px;
+}
+
+.hm-moveLeft {
+    margin-left: -18px;
+}
+
+/* END - helpMode override default stylesheet */

@@ -1,0 +1,120 @@
+/*----------------------------------------
+    Tables
+------------------------------------------*/
+
+.jsgrid-edit-row input[type="checkbox"], .jsgrid-insert-row input[type="checkbox"], .jsgrid-filter-row input[type="checkbox"], .jsgrid-alt-row input[type="checkbox"], .jsgrid-row input[type="checkbox"], .config-panel input[type=checkbox] {
+  position: relative !important;
+  left: 0 !important;
+  visibility: visible !important;
+}
+
+.jsgrid-grid-body {
+  height: auto !important;
+}
+
+.jsgrid-edit-row select {
+  display: block !important;
+}
+
+.jsgrid-insert-row select {
+  display: block !important;
+}
+
+.jsgrid-insert-row .select-wrapper .caret {
+  display: none !important;
+}
+
+.jsgrid-insert-row .select-wrapper .select-dropdown {
+  display: none !important;
+}
+
+#jsGrid-sorting {
+  height: 500px !important;
+  overflow: scroll !important;
+}
+
+#jsGrid-page {
+  height: 500px !important;
+  overflow: scroll !important;
+}
+
+#jsGrid-custom-row {
+  height: 500px !important;
+  overflow: scroll !important;
+}
+
+td, th {
+  padding: 0;
+}
+
+#table-datatables {
+  background: #e4e1e1;
+  border-collapse: collapse;
+  border-spacing: 0;
+  align-content: left;
+  width: 115%;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* position: static !important;
+  overflow-y: scroll !important;
+  height: 500px; */
+}
+
+.doc .example>.source-preview-wrapper>.preview {
+  height: 100%;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  margin-top: -64px;
+}
+
+table.dataTable tbody tr {
+  line-height: 0.1;
+}
+
+/* STYLED TABLE */
+#data-table-simple table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#data-table-simple thead, #data-table-simple tbody, #data-table-simple tr {
+  display: block;
+}
+
+#data-table-simple tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+#data-table-simple thead th {
+  height: 30px;
+  line-height: 0.8rem;
+}
+
+#data-table-simple tbody {
+  height: 240px;
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+#data-table-simple thead {
+  /* fallback */
+  width: 97%;
+  /* minus scroll bar width */
+  width: calc(100% - 17px);
+}
+
+#data-table-simple tbody td, #data-table-simple thead th {
+  width: 14%;
+  float: left;
+}
+
+/* STYLED TABLE */
+
+body.fuse-aside-folded:not(.fuse-aside-expanded) #aside .aside-content-wrapper, body.fuse-aside-folded:not(.fuse-aside-expanded) #aside .aside-content-wrapper>.aside-content {
+  width: 0px !important;
+  min-width: 0rem !important;
+}

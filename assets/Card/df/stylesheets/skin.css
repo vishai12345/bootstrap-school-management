@@ -1,0 +1,76 @@
+/* ***** Display styles ***** */
+
+/* Black Display */
+.black .box_bkg  {
+	background: url("../images/counter_bkg_bk.png") no-repeat scroll 0 0 transparent;
+	box-shadow: 0 0 150px rgba(0, 0, 0, 0.4);
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	color: #ccc;
+}
+
+.black #counter_bkg {
+	background-image: url("../images/frame_bk.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+.black input#email, .black #submit {
+  background-color: #303030;
+  box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #ffffff;
+}
+
+/* White Display */
+.white .box_bkg {
+	background: url("../images/counter_bkg_wh.png") no-repeat scroll 0 0 transparent;
+	box-shadow: 0 0 150px rgba(0, 0, 0, 0.3), 0 0 80px rgba(0, 0, 0, 0.1) inset;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	color: #5b5b5b;
+}
+
+.white #counter_bkg {
+	background-image: url("../images/frame_wh.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.white input#email, .white #submit {
+	background-color: #e6e6e6;
+	color: #444;
+}
+
+/* ***** Dark schema ***** */
+body.dark{
+	box-shadow: 0 13px 25px rgba(0, 0, 0, 0.3) inset;
+	color: #ccc;
+}
+.dark input#email {
+	border-color: #141414;
+    border-style: solid;
+    border-width: 1px;
+}
+.dark #submit {
+	border-color: #141414;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+}
+
+
+/* Light schema */
+body.light{
+	box-shadow: 0 13px 25px rgba(0,0,0,0.2) inset;
+	color: #5b5b5b;
+}
+.light input#email {
+	border-color: #f4f4f4;
+    border-style: solid;
+    border-width: 1px;
+}
+.light #submit {
+	border-color: #f4f4f4;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+}

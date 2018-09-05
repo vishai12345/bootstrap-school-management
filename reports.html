@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Blank</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic"
+        rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <!-- Icons.css -->
+    <link type="text/css" rel="stylesheet" href="./assets/icons/fuse-icon-font/style.css">
+    <link rel="stylesheet" href="./assets/cards/css/font-awesome.min.css">
+    <!-- Animate.css -->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/animate.css/animate.min.css">
+    <!-- PNotify -->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/pnotify/pnotify.custom.min.css">
+    <!-- Nvd3 - D3 Charts -->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/nvd3/build/nv.d3.min.css" />
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css" />
+    <!-- Fuse Html -->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/fuse-html/fuse-html.min.css" />
+    <!-- Main CSS -->
+    <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- / STYLESHEETS -->
+
+    <!-- JAVASCRIPT -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Mobile Detect -->
+    <script type="text/javascript" src="./assets/vendor/mobile-detect/mobile-detect.min.js"></script>
+    <!-- Perfect Scrollbar -->
+    <script type="text/javascript" src="./assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Popper.js -->
+    <script type="text/javascript" src="./assets/vendor/popper.js/index.js"></script>
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- Nvd3 - D3 Charts -->
+    <script type="text/javascript" src="./assets/vendor/d3/d3.min.js"></script>
+    <script type="text/javascript" src="./assets/vendor/nvd3/build/nv.d3.min.js"></script>
+    <!-- Data tables -->
+    <script type="text/javascript" src="./assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="./assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+    <!-- PNotify -->
+    <script type="text/javascript" src="./assets/vendor/pnotify/pnotify.custom.min.js"></script>
+    <!-- Fuse Html -->
+    <script type="text/javascript" src="./assets/vendor/fuse-html/fuse-html.min.js"></script>
+    <!-- Main JS -->
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/popover.js"></script>
+    <!-- / JAVASCRIPT -->
+</head>
+
+<body class="layout layout-vertical layout-right-navigation layout-above-toolbar">
+    <main>
+        <nav id="toolbar" class="bg-white" style="height: 47px !important;">
+            <div class="row no-gutters align-items-center flex-nowrap">
+                <div class="col">
+                    <div class="row no-gutters align-items-center flex-nowrap">
+                        <div class="shortcuts-wrapper row no-gutters align-items-center px-0 px-sm-2">
+                            <div class="shortcuts row no-gutters align-items-center">
+                                <div class="row no-gutters align-items-center flex-nowrap">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Survey</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link btn" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Poll</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link btn" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Assessment</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="toolbar-separator"></div>
+
+                    </div>
+                </div>
+
+                <div class="col-auto">
+
+                    <div class="row no-gutters align-items-center justify-content-end">
+
+                        <div class="user-menu-button dropdown">
+
+                            <div class="dropdown-toggle ripple row align-items-center no-gutters px-2 px-sm-4" role="button" id="dropdownUserMenu" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="avatar-wrapper">
+                                    <img class="avatar" src="./assets/images/avatars/profile.jpg">
+                                    <i class="status text-green icon-checkbox-marked-circle s-4"></i>
+                                </div>
+                                <span class="username mx-3 d-none d-md-block">John Doe</span>
+                            </div>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <i class="icon-account"></i>
+                                        <span class="px-3">My Profile</span>
+                                    </div>
+                                </a>
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <i class="icon-email"></i>
+                                        <span class="px-3">Inbox</span>
+                                    </div>
+                                </a>
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <i class="status text-green icon-checkbox-marked-circle"></i>
+                                        <span class="px-3">Online</span>
+                                    </div>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <i class="icon-logout"></i>
+                                        <span class="px-3">Logout</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="toolbar-separator"></div>
+
+                        <button id="toggle-fold-aside-button" type="button" class="search-button btn btn-icon" data-fuse-aside-toggle-fold>
+                            <!-- <buttontype="button" class="btn btn-icon d-none d-lg-block" data-fuse-aside-toggle-fold> -->
+                            <i class="icon icon-backburger"></i>
+                            <!-- <i class="icon icon-magnify"></i> -->
+                        </button>
+
+
+                        <div class="toolbar-separator"></div>
+
+                        <div class="language-button dropdown">
+
+                            <div class="dropdown-toggle ripple row align-items-center justify-content-center no-gutters px-0 px-sm-4" role="button" id="dropdownLanguageMenu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="row no-gutters align-items-center">
+                                    <img class="flag mr-2" src="./assets/images/flags/us.png">
+                                    <span class="d-none d-md-block">EN</span>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownLanguageMenu">
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <img class="flag" src="./assets/images/flags/us.png">
+                                        <span class="px-3">English</span>
+                                    </div>
+                                </a>
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <img class="flag" src="./assets/images/flags/es.png">
+                                        <span class="px-3">Spanish</span>
+                                    </div>
+                                </a>
+
+                                <a class="dropdown-item" href="#">
+                                    <div class="row no-gutters align-items-center flex-nowrap">
+                                        <img class="flag" src="./assets/images/flags/tr.png">
+                                        <span class="px-3">Turkish</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="toolbar-separator"></div>
+
+                        <button type="button" class="quick-panel-button btn btn-icon" data-fuse-bar-toggle="quick-panel-sidebar">
+                            <i class="icon icon-format-list-bulleted"></i>
+                        </button>
+                        <div class="toolbar-separator d-block d-lg-none"></div>
+
+                        <button type="button" class="toggle-aside-button btn btn-icon d-block d-lg-none" data-fuse-bar-toggle="aside">
+                            <i class="icon icon-menu"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="wrapper">
+            <div class="content-wrapper">
+                <div class="content custom-scrollbar">
+                    <div class="page-layout blank mt-2">
+                        <nav class="nav popover-header">
+                            <a class="nav-link" href="edit.html">Edit</a>
+                            <a class="nav-link" href="#">Send</a>
+                            <a class="nav-link bb" href="reports.html">Reports</a>
+                            <a class="nav-link" href="#">Manage Data</a>
+                            <a class="nav-link" href="#">Mobile</a>
+                            <a class="nav-link" href="#">Integration</a>
+                        </nav>
+                        <ul class="nav nav-tabs" style="height: 50px;" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link active text-center" id="workspace-tab" data-toggle="tab" href="#workspace"
+                                    role="tab" aria-controls="workspace" aria-expanded="true">Workspace</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="interface-tab" data-toggle="tab" href="#interface" role="tab" aria-controls="interface">Interface</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="languages-tab" data-toggle="tab" href="#languages" role="tab" aria-controls="languages">Languages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="security-tab" data-toggle="tab" href="#security" role="tab" aria-controls="security">Security</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images">Images</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="variables-tab" data-toggle="tab" href="#variables" role="tab" aria-controls="variables">Variables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
+                                    aria-controls="notifications">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="completion-tab" data-toggle="tab" href="#completion" role="tab"
+                                    aria-controls="completion">Completion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="rewards-tab" data-toggle="tab" href="#rewards" role="tab" aria-controls="rewards">Rewards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="bottom: 0px;height: 100%" class="nav-link" id="quotas-tab" data-toggle="tab" href="#quotas" role="tab" aria-controls="quotas">Quotas</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="workspace" role="tabpanel" aria-labelledby="workspace-tab" ms-scroll>
+                                <div class="doc buttons-doc page-layout simple full-width">
+                                    <!-- CONTENT -->
+                                    <div class="page-content p-6">
+                                        <div class="content container">
+                                            <div class="report">
+                                                <div class="row bg-gray p-2">
+                                                    <div class="col-md-4">
+                                                        <div class="container">
+                                                            <form action="">
+                                                                <label for="url">Report Link: </label>
+                                                                <input type="text" class="form-control" name="url" id="url" placeholder="https://www.google.co.in">
+                                                            </form>
+                                                            <div class="text-center mt-1">
+                                                                <i class="fa fa-facebook"></i>
+                                                                <i class="fa fa-linkedin"></i>
+                                                                <i class="fa fa-twitter"></i>
+                                                                <i class="fa fa-google-plus"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="w-100">Filter:
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="">abcd</option>
+                                                                <option value="">sahdgjvcas</option>
+                                                                <option value="">dsjfalhk</option>
+                                                                <option value="">dskhakf</option>
+                                                                <option value="">dsagj</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4" style="height: 120px;">
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download Data & Reports
+                                                            </button>
+                                                            <div class="dropdown-menu" style="min-width: 24.5rem;">
+                                                                <p class="pl-1">Download Raw Data</p>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="#">Excel Data</a>
+                                                                <a class="dropdown-item" href="#">CSV Data</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <p class="pl-1">Reports with Charts</p>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="#">Microsoft Word</a>
+                                                                <a class="dropdown-item" href="#">Excel with Charts</a>
+                                                                <a class="dropdown-item" href="#">Powerpoint</a>
+                                                                <a class="dropdown-item" href="#">Adobe PDF</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /btn-group -->
+                                                    </div>
+                                                    <div class="col-md-12 pb-2">
+                                                        <table class="text-center" id="reports-summary">
+                                                            <tbody>
+                                                                <td>
+                                                                    <h6>Viewed</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-eye" aria-hidden="true"></i> 1</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h6>Started</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-clock-o" aria-hidden="true"></i> 0</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h6>Completed</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-flag-o" aria-hidden="true"></i> 0</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h6>Completion Rate</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-check-square-o" aria-hidden="true"></i> 0%</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h6>Drop Outs</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-sign-out" aria-hidden="true"></i> 0</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h6>Time to Complete</h6>
+                                                                    <p>
+                                                                        <i class="fa fa-clock-o" aria-hidden="true"></i> 0 secs</p>
+                                                                </td>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="doc breadcrumb-doc page-layout simple full-width mt-2">
+                                                        <div class="add_quest example w-100">
+                                                            <div class="description" style="background-color: lightgray !important">
+                                                                <div class="description-text"> </div>
+                                                                <div style="margin-left: auto !important;">
+                                                                        <a href="" class="myanchor mr-1"><span data-toggle="tooltip" title="Settings"><i class="fa fa-cogs" aria-hidden="true"></i></span></a>
+                                                                    <ul class="myanchor mr-1 nav nav-tabs" id="myTab" role="tablist">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                                                <span data-toggle="tooltip" title="Charts">
+                                                                                    <i class="fa fa-bar-chart pl-1 pt-1" style="margin-right: 0;"
+                                                                                        aria-hidden="true"></i>
+                                                                                </span>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" id="dropdown1-tab" href="#dropdown1" role="tab" data-toggle="tab" aria-controls="dropdown1"><i class="fa fa-area-chart"></i> Column</a>
+                                                                                <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2"><i class="fa fa-pie-chart"></i> Pie</a>
+                                                                                <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2"><i class="fa fa-bar-chart"></i> Bar</a>
+                                                                                <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2"><i class="fa fa-line-chart"></i> Line</a>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul class="myanchor mr-1 nav nav-tabs" id="myTab" role="tablist">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                                                <span data-toggle="tooltip" title="Download Options">
+                                                                                    <i class="fa fa-download pl-1 pt-1" style="margin-right: 0;"
+                                                                                        aria-hidden="true"></i>
+                                                                                </span>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" id="dropdown1-tab" href="#dropdown1" role="tab" data-toggle="tab" aria-controls="dropdown1">Excel</a>
+                                                                                <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2">Trend Data</a>
+                                                                                <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2">Banner Table</a>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <a href="" class="myanchor mr-1"><span data-toggle="tooltip" title="Share"><i class="fa fa-share" aria-hidden="true"></i></span></a>
+                                                                    
+                                                                </div>
+                                                                <div class="toggle-source-preview">
+                                                                    <i class="icon icon-code-tags"></i>
+                                                                    <i class="icon icon-eye-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="source-preview-wrapper" style="height: auto !important;">
+                                                                <div class="preview">        
+                                                                        <div class="tab-content" id="myTabContent" style="width: 90%;">
+                                                                                <div class="tab-pane fade show active" id="dropdown1" role="tabpanel" aria-labelledby="dropdown1-tab">
+                                                                                        <div id="project-dashboard">
+                                                                                                <!-- WIDGET GROUP -->
+                                                                                                <div class="widget-group row no-gutters">
+                                                                                                    <!-- WIDGET 5 -->
+                                                                                                    <div class="widget widget5 card w-100">
+                                                                                                        <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
+                                                                                                            <div>
+                                                                                                                <button type="button" class="widget5-option-change-btn btn btn-link" data-interval="TW">
+                                                                                                                    This Week
+                                                                                                                </button>
+                                                                                                                <button type="button" class="widget5-option-change-btn btn btn-link" data-interval="LW">
+                                                                                                                    Last Week
+                                                                                                                </button>
+                                                                                                                <button type="button" class="widget5-option-change-btn btn btn-link" data-interval="2W">
+                                                                                                                    2 WEEKS AGO
+                                                                                                                </button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="widget-content p-4">
+                                                                                                            <div id="widget5-main-chart" style="height: 300px;">
+                                                                                                                <svg></svg>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <!-- / WIDGET 5 -->
+    
+                                                                                                </div>
+                                                                                                <!-- / WIDGET GROUP -->
+                                                                                            </div>
+                                                                                </div>
+                                                                                <div class="tab-pane fade" id="dropdown2" role="tabpanel" aria-labelledby="dropdown2-tab">
+                                                                                        <div id="project-dashboard">
+                                                                                                <!-- WIDGET GROUP -->
+                                                                                                <div class="widget-group row no-gutters">
+                                                                                                    <!-- WIDGET 6 -->
+                                                                                                    <div class="widget widget6 card w-100">
+                                                                                                        <div class="widget-header px-4 row no-gutters align-items-center justify-content-between">
+                                                                                                            <div class="col">
+                                                                                                                <span class="h6">Task Distrubition
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                            <div class="">
+                                                                                                                <select id="widget6-option-select" class="h6 custom-select">
+                                                                                                                    <option selected="" value="TW">This Week
+                                                                                                                    </option>
+                                                                                                                    <option value="LW">Last Week
+                                                                                                                    </option>
+                                                                                                                    <option value="2W">2 Weeks Ago
+                                                                                                                    </option>
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="widget-content">
+                                                                                                            <div class="row no-gutters">
+                                                                                                                <div class="col-12">
+                                                                                                                    <div id="widget6-main-chart" class="p-4" style="height: 250px;">
+                                                                                                                        <svg></svg>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="divider col-12"></div>
+                                                                                                                <div id="added-tasks" class="col-6 d-flex flex-column align-items-center justify-content-center py-4">
+                                                                                                                    <div class="count h2">594</div>
+                                                                                                                    <div class="count-title">Tasks Added
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div id="completed-tasks" class="col-6 d-flex flex-column align-items-center justify-content-center py-4">
+                                                                                                                    <div class="count h2">287</div>
+                                                                                                                    <div class="count-title">Tasks Completed
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <!-- / WIDGET 6 -->
+                                                                                                </div>
+                                                                                                <!-- / WIDGET GROUP -->
+                                                                                            </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                </div>
+                                                                <div class="source custom-scrollbar">
+                                                                    <div class="highlight">
+                                                                        back
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CONTENT -->
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="interface" role="tabpanel" aria-labelledby="interface-tab">
+                                <p>Interface</p>
+                            </div>
+                            <div class="tab-pane fade" id="languages" role="tabpanel" aria-labelledby="languages-tab">
+                                <p>Languages</p>
+                            </div>
+                            <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                <p>Security</p>
+                            </div>
+                            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                                <p>Images</p>
+                            </div>
+                            <div class="tab-pane fade" id="variables" role="tabpanel" aria-labelledby="variables-tab">
+                                <p>Variables</p>
+                            </div>
+                            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                <p>Notifications</p>
+                            </div>
+                            <div class="tab-pane fade" id="completion" role="tabpanel" aria-labelledby="completion-tab">
+                                <p>Completion</p>
+                            </div>
+                            <div class="tab-pane fade" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
+                                <p>Rewads</p>
+                            </div>
+                            <div class="tab-pane fade" id="quotas" role="tabpanel" aria-labelledby="quotas-tab">
+                                <p>Quotas</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- <aside id="aside" class="aside aside-right" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="right">
+                <div class="aside-content-wrapper">
+                    <div class="aside-content bg-light text-auto">
+                        <div class="aside-toolbar" style="padding: 0 !important; height: 4.4rem !important; min-height: 0px;">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li style="width: 33%;" class="nav-item">
+                                    <a class="nav-link btn active" id="simple-tab" data-toggle="tab" href="#simple-tab-pane" role="tab" aria-controls="simple-tab-pane"
+                                        aria-expanded="true">Simple</a>
+                                </li>
+                                <li style="width: 33%;" class="nav-item">
+                                    <a class="nav-link btn" id="advance-tab" data-toggle="tab" href="#advance-tab-pane" role="tab" aria-controls="advance-tab-pane">Advance</a>
+                                </li>
+                                <li style="width: 33%;" class="nav-item">
+                                    <a class="nav-link btn" id="library-tab" data-toggle="tab" href="#library-tab-pane" role="tab" aria-controls="library-tab-pane">Library</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
+                            <div class="tab-content">
+
+                                <div role="tabpanel" class="tab-pane fade show active" id="simple-tab-pane" aria-labelledby="simple-tab">
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <h3 class="popover-header">Multiple Choice</h3>
+                                        <div class="bg-white text-center p-2">
+                                            <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                of answer choices.</p>
+                                        </div>
+                                        <div class="bg-my p-2 text-white">
+                                            <form action="">
+                                                <h6>Which flavor of ice cream is your favourite?</h6>
+                                                <div class="boxes">
+                                                    <input type="checkbox" id="box-1">
+                                                    <label for="box-1">Sustainable typewriter cronut</label>
+
+                                                    <input type="checkbox" id="box-2" checked>
+                                                    <label for="box-2">Gentrify pickled kale chips </label>
+
+                                                    <input type="checkbox" id="box-3">
+                                                    <label for="box-3">Gastropub butcher</label>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+                                        <h3 class="popover-header">PopOver Title</h3>
+
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <div id="wrapper">
+                                            <div>
+                                                <input type="checkbox" id="check1" />
+                                                <label for="check1">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I like Codepen!
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check2" />
+                                                <label for="check2">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I'm a designer
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check3" />
+                                                <label for="check3">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I shouldn't be looking at this right now
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check4" />
+                                                <label for="check4">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> Pasta is my favourite food
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check5" />
+                                                <label for="check5">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> This Pen sucks!
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check6" />
+                                                <label for="check6">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I already knew how to create custom checkboxes
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check7" />
+                                                <label for="check7">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I thought it was harder
+                                                </label>
+                                            </div>
+                                    
+                                            <div>
+                                                <input type="checkbox" id="check8" />
+                                                <label for="check8">
+                                                    <div>
+                                                        <i class="fa fa-check"></i>
+                                                    </div> I'm aware that no JavaScript is required
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <h3 class="popover-header">Multiple Choice</h3>
+                                        <div class="bg-white text-center p-2">
+                                            <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                of answer choices.</p>
+                                        </div>
+                                        <div class="bg-my p-2 text-white">
+                                            <form action="">
+                                                <h6>Which flavor of ice cream is your favourite?</h6>
+
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test1" />
+                                                    <label for="test1">Red</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test2" />
+                                                    <label for="test2">Yellow</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test3" />
+                                                    <label for="test3">Green</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test4" />
+                                                    <label for="test4">Brown</label>
+                                                </p>
+                                            </form>
+
+                                        </div>
+                                        <h3 class="popover-header">PopOver Title</h3>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="tab-pane fade" id="advance-tab-pane" role="tabpanel" aria-labelledby="advance-tab">
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <h3 class="popover-header">Multiple Choice</h3>
+                                        <div class="bg-white text-center p-2">
+                                            <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                of answer choices.</p>
+                                        </div>
+                                        <div class="bg-my p-2 text-white">
+                                            <form action="">
+                                                <h6>Which flavor of ice cream is your favourite?</h6>
+                                                <p><label><input type="checkbox" name="ice" id="">Vanilla</label></p>
+                                                <p><label><input type="checkbox" name="ice" id="">Butter Scotch</label></p>
+                                                <p><label><input type="checkbox" name="ice" id="">Strawberry</label></p>
+                                                <p><label><input type="checkbox" name="ice" id="">Chocolate</label></p>
+                                            </form>
+
+                                        </div>
+                                        <h3 class="popover-header">PopOver Title</h3>
+
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <h3 class="popover-header">Multiple Choice</h3>
+                                        <div class="bg-white text-center p-2">
+                                            <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                of answer choices.</p>
+                                        </div>
+                                        <div class="bg-my p-2 text-white">
+                                            <form action="">
+                                                <h6>Which flavor of ice cream is your favourite?</h6>
+
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test1" />
+                                                    <label for="test1">Red</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test2" />
+                                                    <label for="test2">Yellow</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test3" />
+                                                    <label for="test3">Green</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test4" />
+                                                    <label for="test4">Brown</label>
+                                                </p>
+                                            </form>
+
+                                        </div>
+                                        <h3 class="popover-header">PopOver Title</h3>
+
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
+                                        <span class="float-left pl-2">Click 1</span>
+                                        <span class="add-btn float-right px-2">Add
+                                            <i class="fa fa-plus mt-2"></i>
+                                        </span>
+                                    </a>
+                                    <div id="popover_content_wrapper" class="d-none">
+                                        <h3 class="popover-header">Multiple Choice</h3>
+                                        <div class="bg-white text-center p-2">
+                                            <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                of answer choices.</p>
+                                        </div>
+                                        <div class="bg-my p-2 text-white">
+                                            <form action="">
+                                                <h6>Which flavor of ice cream is your favourite?</h6>
+
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test1" />
+                                                    <label for="test1">Red</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test2" />
+                                                    <label for="test2">Yellow</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test3" />
+                                                    <label for="test3">Green</label>
+                                                </p>
+                                                <p>
+                                                    <input class="with-gap" name="group1" type="radio" id="test4" />
+                                                    <label for="test4">Brown</label>
+                                                </p>
+                                            </form>
+
+                                        </div>
+                                        <h3 class="popover-header">PopOver Title</h3>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="library-tab-pane" role="tabpanel" aria-labelledby="library-tab">
+
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </aside> -->
+            <!-- <div class="quick-panel-sidebar custom-scrollbar" fuse-cloak data-fuse-bar="quick-panel-sidebar" data-fuse-bar-position="right">
+                <div class="list-group" class="date">
+
+                    <div class="list-group-item subheader">TODAY</div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="text-muted">
+
+                            <div class="h1"> Saturday</div>
+
+                            <div class="h2 row no-gutters align-items-start">
+                                <span> 1</span>
+                                <span class="h6">th</span>
+                                <span> Jan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="list-group">
+
+                    <div class="list-group-item subheader">Events</div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Group Meeting</h3>
+                            <p>In 32 Minutes, Room 1B</p>
+                        </div>
+                    </div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Public Beta Release</h3>
+                            <p>11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Dinner with David</h3>
+                            <p>17:30 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Q&amp;A Session</h3>
+                            <p>20:30 PM</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="list-group">
+
+                    <div class="list-group-item subheader">Notes</div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Best songs to listen while working</h3>
+                            <p>Last edit: May 8th, 2015</p>
+                        </div>
+                    </div>
+
+                    <div class="list-group-item two-line">
+
+                        <div class="list-item-content">
+                            <h3>Useful subreddits</h3>
+                            <p>Last edit: January 12th, 2015</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="list-group">
+
+                    <div class="list-group-item subheader">Quick Settings</div>
+
+                    <div class="list-group-item">
+
+                        <div class="list-item-content">
+                            <h3>Notifications</h3>
+                        </div>
+
+                        <div class="secondary-container">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" />
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div class="list-group-item">
+
+                        <div class="list-item-content">
+                            <h3>Cloud Sync</h3>
+                        </div>
+
+                        <div class="secondary-container">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" />
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div class="list-group-item">
+
+                        <div class="list-item-content">
+                            <h3>Retro Thrusters</h3>
+                        </div>
+
+                        <div class="secondary-container">
+
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" />
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </main>
+    <script type="text/javascript" src="./assets/js/apps/dashboard/project.js"></script>
+</body>
+
+</html>
