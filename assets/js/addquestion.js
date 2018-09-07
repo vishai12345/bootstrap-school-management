@@ -42,9 +42,9 @@ let questions = []
                 var newRow = $(`<tr data-questionid='${newQuestionObj.id}'>`);
                 var cols = "";
 
-                cols += `<div class="add_quest example w-100"> <div class="description" style="background-color: lightgray !important"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="" class="myanchor mr-1"><span class="fa fa-cog"></span> <span>Setting</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-files-o"></span> <span>Copy</span></a> <a href="" class="myanchor mr-1">Logic</a> <a href="javascript:void(0);" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span> <span>Edit</span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
+                cols += `<div class="add_quest example w-100"> <div class="description" style="background-color: lightgray !important"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="javascript:void(0);" class="myanchor changeQuestionTypeButton mr-1"><span class="fa fa-cog"></span> <span>Setting</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-files-o"></span> <span>Copy</span></a> <a href="" class="myanchor mr-1">Logic</a> <a href="javascript:void(0);" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span> <span>Edit</span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
 
-                cols += `<td><input type="button" class="ibtnDel btn btn-md btn-danger"  value="Delete"></td><input type="button" class="pageBreak btn btn-md btn-info" value="Page Break" style="float: right">`;
+                cols += `<td><input type="button" class="add_question_button btn btn-md btn-secondary"  value="Add Question"></td><input type="button" class="pageBreak btn btn-md btn-info" value="Page Break" style="float: right">`;
                 newRow.append(cols);
                 // if (counter == 4) $('#addrow').attr('disabled', true).prop('value', "You've reached the limit");
                 $("table.order-list").append(newRow);
@@ -117,7 +117,6 @@ let questions = []
                 const $this = $(this)
                 const $currentTrId = $this.closest("tr").attr('data-questionid')
                 let $currentQuestionForEdit = questions.find(question => question.id == $currentTrId)
-                console.log(questions)
                 if(!$this.hasClass('editingQuestion')){
                     $this.addClass('editingQuestion')
                     $this.closest("tr").find('.preview-elements').css('display', 'none')
@@ -139,6 +138,29 @@ let questions = []
                 }
             })
 
+            $(document).on('click', '.changeQuestionTypeButton', function(e){
+                e.preventDefault()
+                const $this = $(this)
+                const $currentTrId = $this.closest("tr").attr('data-questionid')
+                let $currentQuestionForEdit = questions.find(question => question.id == $currentTrId)
+                if(!$this.hasClass('editingQuestionType')){
+                    $this.addClass('editingQuestionType')
+                    $this.closest("tr").find('.preview-elements').css('display', 'none')
+                    const changeQuestionTypeHtml = getQuestionTypeHtml($currentQuestionForEdit)
+                    $this.closest("tr").find('.preview').append(changeQuestionTypeHtml)
+                }else{
+                    $this.removeClass('editingQuestionType')
+                    const updatedQuestionData = $this.closest("tr").find('.editOptionInBulkHtml').serializeArray()
+                    updatedQuestionData.map(questionRow => {
+                        if(questionRow.name == 'questionType'){
+                            $currentQuestionForEdit.type = questionRow.value
+                        }
+                    })
+                    $this.closest("tr").find('.preview-elements').empty().html(returnQuestionHtml($currentQuestionForEdit)).css('display', 'block')
+                    $this.closest("tr").find('.editOptionInBulkHtml').remove()
+                }
+            })
+
             $(document).on('click', '.pageBreak' , function(event){
                 event.preventDefault();
                 const $this = $(this)
@@ -150,9 +172,77 @@ let questions = []
                     $this.val("SECTION BREAK")
                 }
             })
+
+            $(document).on('click', '.addMoreOptionButton', function(e){
+                e.preventDefault()
+                const $this = $(this)
+                const parentConatiner = $this.closest('div.custom_action_conatiner')
+                const parentConatinerID = parentConatiner.attr('data-question_id')
+                const optionTextInput = `<input data-question_id="${parentConatinerID}" type="text" class="form-control add_more_option_input" placeholder="Enter option">`
+                $('#addOptionInSelectedQuestionModal div.modal-body').empty().append(optionTextInput)
+                $('#addOptionInSelectedQuestionModal').addClass('modal-sm').modal()
+            })
+
+            $(document).on('click', '.editInBulkButton', function(e){
+                e.preventDefault()
+                const parentConatiner = $(this).closest('div.custom_action_conatiner')
+                const parentConatinerID = parentConatiner.attr('data-question_id')
+                const optionTextAreaInput = `<label for="exampleText" class="">Options</label>
+                    <textarea data-question_id="${parentConatinerID}" name="text" type="textarea" class="form-control editOptionsInBulkQuestion" style="width: 97%; height: 200px;"></textarea>`
+                $('#editOptionsInBulkQuestionModal div.modal-body').empty().append(optionTextAreaInput)
+                $('#editOptionsInBulkQuestionModal').addClass('modal-lg').modal()
+            })
+
+            $(document).on('click', 'button.submitEditOptionInBulkForm', function(e){
+                e.preventDefault()
+                const parentConatiner = $(this).closest('div#editOptionsInBulkQuestionModal')
+                let options = parentConatiner.find('textarea.editOptionsInBulkQuestion').val()
+                options = options.split('\n').filter(opt => opt !== '')
+                const questionID = parentConatiner.find('textarea.editOptionsInBulkQuestion').attr('data-question_id')
+                questions = questions.map(ques => {
+                    if(ques.id == questionID){
+                        ques.options.list = options
+                        targetQuestion = ques
+                    }
+                    return ques
+                })
+                const parentTr = $('body').find(`[data-questionid='${questionID}']`)
+                parentTr.find('div.preview-elements').empty().append(returnQuestionHtml(targetQuestion))
+            })
+
+            $(document).on('click', 'button.submitAddMoreOptionForm' , function(e){
+                e.preventDefault()
+                const parentConatiner = $(this).closest('div#addOptionInSelectedQuestionModal')
+                const option = parentConatiner.find('input.add_more_option_input').val()
+                const questionID = parentConatiner.find('input.add_more_option_input').attr('data-question_id')
+                questions = questions.map(ques => {
+                    if(ques.id == questionID){
+                        ques.options.list = [...ques.options.list, option]
+                        targetQuestion = ques
+                    }
+                    return ques
+                })
+                const parentTr = $('body').find(`[data-questionid='${questionID}']`)
+                parentTr.find('div.preview-elements').empty().append(returnQuestionHtml(targetQuestion))
+            })
+
+            $(document).on('click', '.add_question_button' , function(e){
+                e.preventDefault()
+                $("#toggle-fold-aside-button").trigger('click');
+            })
+
+            $(document).on('click', '.requiredButton', function(e){
+                e.preventDefault()
+                const parentConatiner = $(this).closest('div.custom_action_conatiner')
+                const parentConatinerID = parentConatiner.attr('data-question_id')
+                questions = questions.map(question => {
+                    if(question.id === parentConatinerID){
+                        question.isRequired = !question.isRequired
+                    }
+                    return question
+                })
+            })
         });
-
-
 
         function calculateRow(row) {
             var price = +row.find('input[name^="price"]').val();
@@ -167,6 +257,28 @@ let questions = []
             $("#grandtotal").text(grandTotal.toFixed(2));
         }
 
+        function getQuestionTypeHtml(questionObj){
+            return `
+                <form class="editOptionInBulkHtml">
+                    <input type="hidden" name="questionID" value="${questionObj.id}">
+                    <label for="input1_${questionObj.id}_1">
+                        <input id="input1_${questionObj.id}_1" name="questionType" type="radio" value="checkbox"> 
+                        Checkbox
+                    </label>
+                    <br />
+                    <label for="input1_${questionObj.id}_2">
+                        <input id="input1_${questionObj.id}_2" name="questionType" type="radio" value="radio"> 
+                        Radio
+                    </label>
+                    <br />
+                    <label for="input1_${questionObj.id}_3">
+                        <input id="input1_${questionObj.id}_3" name="questionType" type="radio" value="dropdown"> 
+                        Dropdown
+                    </label>
+                </form>
+            `
+        }
+
         function returnQuestionHtml(questionObj){
             if(questionObj.type === 'checkbox'){
                 return `
@@ -175,47 +287,9 @@ let questions = []
                             <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
                         </div>
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
-                            <label for="cbx1" class="label-cbx my-1">
-                                <input id="cbx1" type="checkbox" class="invisible">
-                                <div class="checkbox">
-                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
-                                        <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                                        <polyline points="4 11 8 15 16 6"></polyline>
-                                    </svg>
-                                </div>
-                                <span>${questionObj.options.list[0]}</span>
-                            </label>
-                            <label for="cbx2" class="label-cbx my-1">
-                                <input id="cbx2" type="checkbox" class="invisible">
-                                <div class="checkbox">
-                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
-                                        <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                                        <polyline points="4 11 8 15 16 6"></polyline>
-                                    </svg>
-                                </div>
-                                <span>${questionObj.options.list[1]}</span>
-                            </label>
-                            <label for="cbx3" class="label-cbx my-1">
-                                <input id="cbx3" type="checkbox" class="invisible">
-                                <div class="checkbox">
-                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
-                                        <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                                        <polyline points="4 11 8 15 16 6"></polyline>
-                                    </svg>
-                                </div>
-                                <span>${questionObj.options.list[2]}</span>
-                            </label>
-                            <label for="cbx4" class="label-cbx my-1">
-                                <input id="cbx4" type="checkbox" class="invisible">
-                                <div class="checkbox">
-                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
-                                        <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                                        <polyline points="4 11 8 15 16 6"></polyline>
-                                    </svg>
-                                </div>
-                                <span>${questionObj.options.list[3]}</span>
-                            </label>
+                            ${renderQuestionOptions(questionObj)}
                         </div>
+                        ${renderExtraActionElement(questionObj)}
                     </div>
                 `
             } else if(questionObj.type === 'radio'){
@@ -225,23 +299,9 @@ let questions = []
                             <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
                         </div>
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
-                            <label for="input1">
-                                <input id="input1" name="radio" type="radio"> 
-                                ${questionObj.options.list[0]}
-                            </label>
-                            <label for="input2">
-                                <input id="input2" name="radio" type="radio">
-                                ${questionObj.options.list[1]}
-                            </label>
-                            <label for="input3">
-                                <input id="input3" name="radio" type="radio">
-                                ${questionObj.options.list[2]}
-                            </label>
-                            <label for="input4">
-                                <input id="input4" name="radio" type="radio">
-                                ${questionObj.options.list[3]}
-                            </label>
+                            ${renderQuestionOptions(questionObj)}
                         </div>
+                        ${renderExtraActionElement(questionObj)}
                     </div>
                 `
             } else if(questionObj.type === 'dropdown'){
@@ -252,16 +312,50 @@ let questions = []
                         </div>
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
                             <select class="form-control">
-                                <option>${questionObj.options.list[0]}</option>
-                                <option>${questionObj.options.list[1]}</option>
-                                <option>${questionObj.options.list[2]}</option>
-                                <option>${questionObj.options.list[3]}</option>
+                                ${renderQuestionOptions(questionObj)}
                             </select>
                         </div>
+                        ${renderExtraActionElement(questionObj)}
                     </div>
                 `
             }else{
                 return null
+            }
+        }
+
+        function renderQuestionOptions(questionObj){
+            let optionsHtml = ''
+            questionObj.options.list.map((option, index) => {
+                optionsHtml += renderOption(option, questionObj, index)
+            })
+            return optionsHtml
+        }
+
+        function renderOption(option, questionObj, index){
+            if(questionObj.type === 'checkbox'){
+                return `
+                    <label for="cbx1_${questionObj.id}_${index}" class="label-cbx my-1">
+                        <input id="cbx1_${questionObj.id}_${index}" type="checkbox" class="invisible">
+                        <div class="checkbox">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                <polyline points="4 11 8 15 16 6"></polyline>
+                            </svg>
+                        </div>
+                        <span>${option}</span>
+                    </label>
+                `
+            }else if(questionObj.type === 'radio'){
+                return `
+                    <label for="input1_${questionObj.id}_${index}">
+                        <input id="input1_${questionObj.id}_${index}" name="radio" type="radio"> 
+                        ${option}
+                    </label>
+                `
+            }else{
+                return `
+                    <option>${option}</option>
+                `
             }
         }
 
@@ -315,6 +409,31 @@ let questions = []
                         </div>
                         <div id="AdvanceSetting${$questionId}" class="tab-pane fade"></div>
                         <div id="Theme${$questionId}" class="tab-pane fade"></div>
+                    </div>
+                </div>
+            `
+        }
+
+        function renderExtraActionElement(questionObj){
+            return `
+                <div class="custom_action_conatiner" data-question_id="${questionObj.id}">
+                    <div class="add_option_edit_bulk_action_container">
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="addMoreOptionButton btn btn-link pl-0"><span>Add option</span></button>
+                            <button type="button" class="editInBulkButton btn btn-link"><span>Edit Answer in Bulk</span></button>
+                        </div>
+                    </div>
+                    <div class="delete_required_action_container">
+                        <div class="d-flex justify-content-between">
+                            <div class="page-inner-editing-button d-inline"> 
+                                <button type="button" class="btn btn-primary requiredButton" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    Required
+                                </button>
+                            </div>
+                            <div class="page-inner-editing-button d-inline">
+                                <button type="button" class="ibtnDel btn btn-link"><i class="fa fa-trash" aria-hidden="true" style="font-size: 30px;"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `

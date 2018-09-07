@@ -258,12 +258,12 @@
                                                 <div class="col-12 col-sm-12">
                                                     <div class="widget widget1 card">
                                                         <div class="page-header bg-secondary text-auto p-1 row no-gutters align-items-center">
+                                                            <button id="toggle-fold-aside-button" type="button" class="btn btn-secondary btn-lg active text-capitalize" data-fuse-aside-toggle-fold>Add Question</button>
                                                             <h4 class="doc-title mx-auto" id="content">Add Intro</h4>
                                                         </div>
                                                         <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
                                                             <div class="card-body text-center">
                                                                 <p class="card-text">This survey doesn't have any questions yet.</p>
-                                                                <button id="toggle-fold-aside-button" type="button" class="btn btn-secondary btn-lg active text-capitalize" data-fuse-aside-toggle-fold>Add Question</button>
                                                             </div>
                                                             <table id="myTable" class=" table order-list">
                                                                 <tbody>
@@ -589,6 +589,36 @@
                     </div>
                 </div>
             </aside>
+            <div class="modal fade" id="addOptionInSelectedQuestionModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add options</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary submitAddMoreOptionForm" data-dismiss="modal">Add Option</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal fade" id="editOptionsInBulkQuestionModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Edit options</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary submitEditOptionInBulkForm" data-dismiss="modal">Add Options</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
             <!-- <div class="quick-panel-sidebar custom-scrollbar" fuse-cloak data-fuse-bar="quick-panel-sidebar" data-fuse-bar-position="right">
                 <div class="list-group" class="date">
 
