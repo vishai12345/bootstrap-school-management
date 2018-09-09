@@ -243,7 +243,7 @@
                                 </li>
                             </ul>
                         </div>
-        <div id="wrapper" class="add_quest">
+        <div id="wrapper" class="add_quest add_quest_page_uniq">
             <div class="content-wrapper">
                 <div class="content custom-scrollbar">
                     <div class="page-layout blank mt-2">                        
@@ -258,11 +258,11 @@
                                                 <div class="col-12 col-sm-12">
                                                     <div class="widget widget1 card">
                                                         <div class="page-header text-auto p-1 row no-gutters align-items-center justify-content-between">
-                                                            <button id="toggle-fold-aside-button" type="button" class="btn btn-secondary btn-lg active text-capitalize" data-fuse-aside-toggle-fold>Add Question</button>
-                                                            <button id="toggle-fold-aside-button" type="button" class="btn btn-info btn-lg active text-capitalize" data-fuse-aside-toggle-fold>Add Intro</button>
+                                                            <button id="toggle-fold-aside-button" type="button" class="btn btn-secondary btn-lg active text-capitalize add_quest_btn" data-fuse-aside-toggle-fold>Add Question</button>
+                                                            <button id="toggle-fold-aside-button" type="button" class="btn btn-info btn-lg active text-capitalize add_intro_btn" data-fuse-aside-toggle-fold>Add Intro</button>
                                                         </div>
                                                         <div class="widget-content pt-2 pb-8 d-flex flex-column align-items-center justify-content-center">
-                                                            <div class="card-body text-center">
+                                                            <div class="card-body text-center empty_survey_text_line">
                                                                 <p class="card-text">This survey doesn't have any questions yet.</p>
                                                             </div>
                                                             <table id="myTable" class=" table order-list">
@@ -317,16 +317,17 @@
             <aside id="aside" class="aside aside-right" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="right">
                 <div class="aside-content-wrapper">
                     <div class="aside-content bg-light text-auto">
-                        <div class="aside-toolbar" style="padding: 0 !important; height: 4.4rem !important; min-height: 0px;">
+                        <div class="aside-toolbar">
+                            <span class="hd_spn">Add Question</span>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li style="width: 33%;" class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link btn active" id="simple-tab" data-toggle="tab" href="#simple-tab-pane" role="tab" aria-controls="simple-tab-pane"
                                         aria-expanded="true">Simple</a>
                                 </li>
-                                <li style="width: 33%;" class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link btn" id="advance-tab" data-toggle="tab" href="#advance-tab-pane" role="tab" aria-controls="advance-tab-pane">Advance</a>
                                 </li>
-                                <li style="width: 33%;" class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link btn" id="library-tab" data-toggle="tab" href="#library-tab-pane" role="tab" aria-controls="library-tab-pane">Library</a>
                                 </li>
                             </ul>
@@ -334,8 +335,766 @@
 
                         <ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
                             <div class="tab-content">
-
                                 <div role="tabpanel" class="tab-pane fade show active" id="simple-tab-pane" aria-labelledby="simple-tab">
+                                    <!-- ================ new drawer code starts ================= -->
+                                    <div class="whole_options">
+                                        <div class="option_left">
+                                            <h3>Multiple Choice</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/select_one.png" class="option_img">   
+                                                    <span class="pl-2">Select One</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Select One</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <label for="input1_1_0">
+                                                                        <input id="input1_1_0" name="radio" type="radio"> 
+                                                                        option 1
+                                                                    </label>
+                                                                
+                                                                    <label for="input1_1_1">
+                                                                        <input id="input1_1_1" name="radio" type="radio"> 
+                                                                        option 2
+                                                                    </label>
+                                                                
+                                                                    <label for="input1_1_2">
+                                                                        <input id="input1_1_2" name="radio" type="radio"> 
+                                                                        option 3
+                                                                    </label>
+                                                                
+                                                                    <label for="input1_1_3">
+                                                                        <input id="input1_1_3" name="radio" type="radio"> 
+                                                                        option 4
+                                                                    </label>                                                    
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/select_many.png" class="option_img">   
+                                                    <span class="pl-2">Select Many</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Select Many</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible" checked>
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>                                                  
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/drop-down-menu.png" class="option_img">   
+                                                    <span class="pl-2">Drop-down Menu</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Drop-down Menu</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer (or multiple answers) from your list
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <select class="form-control">                                
+                                                                        <option>option 1</option>                                                                 
+                                                                        <option>option 2</option>
+                                                                        <option>option 3</option>
+                                                                        <option>option 4</option>
+                                                                    </select>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <!-- left side first type ends -->
+                                        <!-- right side first type starts TEXT -->
+                                        <div class="option_right">
+                                            <h3>Text</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/comment-box.png" class="option_img">   
+                                                    <span class="pl-2">Comment Box</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Comment Box</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to write one answer in multiple rows of textarea.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <textarea class="form-control" rows="5"></textarea>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/single-row-text.png" class="option_img">   
+                                                    <span class="pl-2">Single Row Text</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Single Row Text</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to write one answer in single row.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="text" class="form-control">                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/email-address.png" class="option_img">   
+                                                    <span class="pl-2">Email Address</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Email Address</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to write email address.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="email" class="form-control">                                                     
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/contact-information.png" class="option_img">   
+                                                    <span class="pl-2">Contact Information</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Contact Information</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to fill thier contact information.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="email" class="form-control">                                                     
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- second row of left & right starts -->
+                                        <div class="option_left">
+                                            <h3>Graphical Rating</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/star-rating.png" class="option_img">   
+                                                    <span class="pl-2">Star Rating</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Star Rating</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your star rating
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa-star-half-o"></span> <span class="fa-star-half-o"></span>
+                                                                    </p>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/smiley-rating.png" class="option_img">   
+                                                    <span class="pl-2">Smiley - Rating</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Smiley - Rating</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your smiley rating
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-smile-o"></span> <span class="fa fa-meh-o"></span> <span class="fa-frown-o"></span> <span class="fa fa-smile-o"></span>
+                                                                    </p>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/thumbs.png" class="option_img">   
+                                                    <span class="pl-2">Thumbs Up/Down</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Thumbs Up/Down</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list
+                                                            of answer choices of thumbs up/down.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-thumbs-up"></span> <span class="fa fa-thumbs-down"></span> <span class="fa fa-thumbs-up"></span> <span class="fa fa-thumbs-down"></span>
+                                                                    </p>                                                    
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/push-to-social.png" class="option_img">   
+                                                    <span class="pl-2">Push To Social</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Push To Social</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to share answer to your list
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-facebook"></span> <span class="fa fa-twitter"></span> <span class="fa fa-google-plus"></span> <span class="fa fa-instagram"></span>
+                                                                    </p>                                                    
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/text-slider.png" class="option_img">   
+                                                    <span class="pl-2">Text Slider</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Text Slider</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list
+                                                            of answer choices of text slider.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="range" min="1" max="100" value="50">                                             
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/numeric-slider.png" class="option_img">   
+                                                    <span class="pl-2">Numeric Slider</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Numeric Slider</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list
+                                                            of answer choices of text slider.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="range" min="1" max="100" value="50">                                             
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <!-- left side second type ends -->
+                                        <!-- right side second type starts TEXT -->
+
+                                        <div class="option_right">
+                                            <h3>Image Chooser</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/select_one.png" class="option_img">   
+                                                    <span class="pl-2">Select One</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Select One</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list of answer choices of select one.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <div class="popover_option">                                                                
+                                                                        <label for="input1_1_0">
+                                                                            <input id="input1_1_0" name="radio" type="radio"> 
+                                                                            option 1
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_1">
+                                                                            <input id="input1_1_1" name="radio" type="radio"> 
+                                                                            option 2
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_2">
+                                                                            <input id="input1_1_2" name="radio" type="radio"> 
+                                                                            option 3
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_3">
+                                                                            <input id="input1_1_3" name="radio" type="radio"> 
+                                                                            option 4
+                                                                        </label>                                                    
+                                                                    </div>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/select-many.png" class="option_img">   
+                                                    <span class="pl-2">Select Many</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Select Many</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to select one answer (or multiple answers) from your list of answer choices of select many checkbox.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible" checked>
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>                                                  
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/rating.png" class="option_img">   
+                                                    <span class="pl-2">Rating</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Rating</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to select rating as a option type.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-thumbs-up"></span> <span class="fa fa-thumbs-down"></span> <span class="fa fa-thumbs-up"></span> <span class="fa fa-thumbs-down"></span>
+                                                                    </p>                                                     
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="bsic_mtrix">
+                                            <h3>Basic Matrix</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/multi-point-scale.png" class="option_img">   
+                                                    <span class="pl-2">Multi-Point Scales</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Multi-Point Scales</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list of answer choices of multi-point sacales.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <div class="popover_option">                                                                
+                                                                        <label for="input1_1_0">
+                                                                            <input id="input1_1_0" name="radio" type="radio"> 
+                                                                            option 1
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_1">
+                                                                            <input id="input1_1_1" name="radio" type="radio"> 
+                                                                            option 2
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_2">
+                                                                            <input id="input1_1_2" name="radio" type="radio"> 
+                                                                            option 3
+                                                                        </label>
+                                                                    
+                                                                        <label for="input1_1_3">
+                                                                            <input id="input1_1_3" name="radio" type="radio"> 
+                                                                            option 4
+                                                                        </label>                                                    
+                                                                    </div>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/multi-select.png" class="option_img">   
+                                                    <span class="pl-2">Multi-Select</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Multi-Select</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to select one answer (or multiple answers) from your list of answer choices of Multi-Select.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible" checked>
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>
+                                                                    <br>
+                                                                    <label for="cbx" class="label-cbx my-1">
+                                                                        <input id="cbx" type="checkbox" class="invisible">
+                                                                        <div class="checkbox">
+                                                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                                                                <polyline points="4 11 8 15 16 6"></polyline>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <span>Checkbox</span>
+                                                                    </label>                                                  
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/spread_sheet.png" class="option_img">   
+                                                    <span class="pl-2">Spreadsheet</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Spreadsheet</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to write thier answer in spreadsheet.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-table"></span> <span class="fa fa-table"></span> <span class="fa fa-table"></span> <span class="fa fa-table"></span>
+                                                                    </p>                                                     
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        </div>
+
+                                        <!-- third row of left & right starts -->
+                                        <div class="option_left">
+                                            <h3>Ordering</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/rank-order.png" class="option_img">   
+                                                    <span class="pl-2">Rank Order</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Rank Order</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your rank order
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa-star-half-o"></span> <span class="fa-star-half-o"></span>
+                                                                    </p>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                              
+                                        </div>
+                                        <!-- left side third type ends -->
+                                        <!-- right side third type starts TEXT -->
+
+                                        
+
+                                    </div>
+
+                                    <!-- ================ new drawer code ends ================= -->
+                                    
+                                <!-- ======================= old drawer options =========================
+
                                     <a href="#" class="btn btn-primary btn-block mt-1 popper" style="padding: 0">
                                         <span class="float-left pl-2">Checkbox</span>
                                         <span data-questionType="checkbox" class="add-btn float-right px-2">Add
@@ -452,6 +1211,8 @@
                                         </div>
 
                                     </div>
+
+                                ===================== old drawer ends =========================== -->
 
 
                                 </div>

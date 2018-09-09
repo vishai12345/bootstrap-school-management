@@ -35,6 +35,7 @@ let questions = []
                 }
                                 
                 questions.push(newQuestionObj)
+                $('.empty_survey_text_line').css('display', 'none')
                 const questionEleHtml = returnQuestionHtml(newQuestionObj)
 
                 counter = $('#myTable tr').length - 2;
@@ -42,9 +43,9 @@ let questions = []
                 var newRow = $(`<tr data-questionid='${newQuestionObj.id}'>`);
                 var cols = "";
 
-                cols += `<div class="add_quest example w-100"> <div class="description" style="background-color: lightgray !important"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="javascript:void(0);" class="myanchor changeQuestionTypeButton mr-1"><span class="fa fa-cog"></span> <span>Setting</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-files-o"></span> <span>Copy</span></a> <a href="" class="myanchor mr-1">Logic</a> <a href="javascript:void(0);" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span> <span>Edit</span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
+                cols += `<div class="add_quest example w-100"> <div class="description"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="javascript:void(0);" class="myanchor changeQuestionTypeButton mr-1"><span class="fa fa-cog"></span> <span>Setting</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-files-o"></span> <span>Copy</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-cogs"></span><span>Logic</span></a> <a href="javascript:void(0);" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span> <span>Edit</span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
 
-                cols += `<td><input type="button" class="add_question_button btn btn-md btn-secondary"  value="Add Question"></td><input type="button" class="pageBreak btn btn-md btn-info" value="Page Break" style="float: right">`;
+                cols += `<td><input type="button" class="add_question_button btn btn-md btn-secondary"  value="Add Question"></td><input type="button" class="seperatorButton btn btn-md btn-outline-info" value="Sepertor" style="float: right"><input type="button" class="pageBreak btn btn-md btn-outline-info" value="Page Break" style="float: right">`;
                 newRow.append(cols);
                 // if (counter == 4) $('#addrow').attr('disabled', true).prop('value', "You've reached the limit");
                 $("table.order-list").append(newRow);
@@ -74,7 +75,7 @@ let questions = []
                 questions.splice(questions.findIndex(question => question.id === parseInt(currentTr.attr('data-questionid'))), 1)
                 currentTr.remove()
                 calculateGrandTotal();
-
+                !questions.length && $('.empty_survey_text_line').css('display', 'block')
                 counter -= 1
                 $('.add-btn').attr('disabled', false).prop('value', "Add Question");
             });
@@ -173,6 +174,17 @@ let questions = []
                 }
             })
 
+            $(document).on('click', '.seperatorButton', function(e){
+                e.preventDefault();
+                if($(this).closest('tr').hasClass('isSeperatorToggled')){
+                    $(this).closest('tr').removeClass('isSeperatorToggled')
+                    $(this).closest('tr').find('.seperator_line').remove()
+                }else{
+                    $(this).closest('tr').addClass('isSeperatorToggled')
+                    $(this).closest('tr').append("<hr class='seperator_line'>")
+                }   
+            })
+
             $(document).on('click', '.addMoreOptionButton', function(e){
                 e.preventDefault()
                 const $this = $(this)
@@ -214,6 +226,7 @@ let questions = []
                 e.preventDefault()
                 const parentConatiner = $(this).closest('div#addOptionInSelectedQuestionModal')
                 const option = parentConatiner.find('input.add_more_option_input').val()
+                if(!option)  { return }
                 const questionID = parentConatiner.find('input.add_more_option_input').attr('data-question_id')
                 questions = questions.map(ques => {
                     if(ques.id == questionID){
@@ -232,7 +245,6 @@ let questions = []
             })
 
             $(document).on('click', '.requiredButton', function(e){
-                e.preventDefault()
                 const parentConatiner = $(this).closest('div.custom_action_conatiner')
                 const parentConatinerID = parentConatiner.attr('data-question_id')
                 questions = questions.map(question => {
@@ -425,10 +437,11 @@ let questions = []
                     </div>
                     <div class="delete_required_action_container">
                         <div class="d-flex justify-content-between">
-                            <div class="page-inner-editing-button d-inline"> 
-                                <button type="button" class="btn btn-primary requiredButton" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Required
-                                </button>
+                            <div class="page-inner-editing-button d-inline d-flex"> 
+                                <div class='customSwitchBodyContainer'>
+                                    <input type="checkbox" id="id-name--1" name="set-name" class="switch-input">
+                                    <label for="id-name--1" class="switch-label requiredButton"> Required<span class="toggle--on"></span><span class="toggle--off"></span></label>
+                                </div>
                             </div>
                             <div class="page-inner-editing-button d-inline">
                                 <button type="button" class="ibtnDel btn btn-link"><i class="fa fa-trash" aria-hidden="true" style="font-size: 30px;"></i></button>

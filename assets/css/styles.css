@@ -123,8 +123,7 @@ p {
   height: 100%;
   display: inline-block;
   text-decoration: none;
-      border-right: 1px solid #bfb9b9;
-    padding: 0 22px 0 14px;
+    padding: 0 8px 0px 8px;
 }
 
 
@@ -241,10 +240,7 @@ body.layout-right-navigation #toggle-fold-aside-button {
 .add_quest span.add-btn.float-right.px-2 {
     background:  transparent;
 }
-.add_quest .tab-content .tab-pane a.btn {
-    background-color: #517998;
-    border-color: #517998;
-}
+
 .add_quest .card-body .btn {
     height: auto;
         padding: 3px 20px;
@@ -584,7 +580,6 @@ UP
   border-left: 4px solid #2196f3;
   box-shadow: 1px 2px 24px 0px #a6abafad;
   margin: 20px 0;
-  padding-bottom: 20px;
 }
 
 .example.w-100 .source-preview-wrapper {
@@ -683,6 +678,7 @@ UP
   ul#myTab {
       width: 100%;
   }
+
   .shortcuts-wrapper.row.no-gutters.align-items-center.px-0.px-sm-2, .shortcuts.row.no-gutters.align-items-center, .row.no-gutters.align-items-center.flex-nowrap {
       width: 100%;
   }
@@ -720,6 +716,9 @@ UP
   .col {
       margin-top: -44px;
   }
+    .top_tabs .no-gutters.align-items-center.flex-nowrap > .nav.nav-tabs {
+    padding-top: 43px;
+}
   .top_tabs .shortcuts-wrapper .shortcuts ul.nav li a {
       font-size: 14px;
   }
@@ -859,10 +858,10 @@ div.creating_container_of_poll_wrappr_row_col {
   padding: 7px 0 0;
 }
 .add_quest .example.w-100 .source-preview-wrapper .preview .preview-elements .form-group .questionEle.form-group {
-  padding: 15px !important;
+  padding: 10px !important;
 }
 .add_quest .example.w-100 .source-preview-wrapper .preview .preview-elements .form-group .optionEle.form-group {
-  padding: 8px 16px;
+  padding: 8px 11px;    line-height: 19px;
 }
 
 .add_quest .source.custom-scrollbar .custom-tab-style > .nav-tabs > li a {
@@ -956,7 +955,7 @@ padding: 15px;
   padding:  0 !important;
 }
 .aside.aside-right .aside-content-wrapper .aside-content .aside-toolbar ul.nav li a {
-  border-right: 1px solid #d6d6d6;
+  border-left: 1px solid #d6d6d6;
   text-transform: uppercase;
 }
 .aside.aside-right .aside-content-wrapper .aside-content .aside-toolbar ul.nav li a.active:after {
@@ -965,3 +964,250 @@ padding: 15px;
 .aside.aside-right .aside-content-wrapper .aside-content .aside-toolbar ul.nav li a.active {
   color: #2196f3;
 }
+.modal {
+    width: 100% !important;
+    max-width: 100%;
+}
+.parent_body_container .header_mid{
+  display: none;
+}
+/* add question */
+.add_quest_page_uniq .doc .page-header {
+    background: #0c83e2;
+    padding: 10px 25px !important;
+}
+.add_quest_page_uniq .doc .page-header button.add_quest_btn {
+    background-color: #fff !important;
+    color: #0c83e2 !important;
+}
+.add_quest_page_uniq .doc .page-header button.add_intro_btn {
+    background: #636363;
+    border: 1px solid #fff;
+    color: #fff !important;
+}
+.add_quest_page_uniq .doc .page-header button {
+    height: auto;
+    padding: 1px 12px;
+    border: 2px solid #fff;
+}
+.add_option_edit_bulk_action_container button {
+    color: #0c83e2;
+    text-transform: none;
+    font-size: 15px;
+    margin: 0px 0 7px 39px !important;
+}
+.delete_required_action_container {
+    padding-top: 19px;
+    border-top: 1px solid #e2e2e2;
+}
+.add_option_edit_bulk_action_container button:active, .add_option_edit_bulk_action_container button:focus {
+    box-shadow:  none !important;
+    color: #3c4252;
+}
+.add_quest .example.w-100 .source-preview-wrapper .preview .preview-elements .form-group .optionEle.form-group label {
+    margin: 7px 0 !important;
+}
+
+/* radio btns styling */
+input[type="radio"]:before {
+    background: #fff;
+    content: '';
+    position:  absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 2px solid #b1b5bb;
+    top: -4px;
+    left: -3px;
+}
+input[type="radio"]:checked:before {
+    border-color: #20C2E0;
+}
+input[type="radio"] {
+    position: relative;
+    top: 3px;
+    left: 4px;
+    margin-right: 14px;
+}
+input[type="radio"]:checked:after {
+    background: #20c2e0 !important;
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    top: 1px;
+    left: 1.5px;
+}
+
+/* drawer designing */
+.whole_options {
+    float:  left;
+    width: 100%;
+}
+.whole_options .option_left {
+    width: 49%;
+    float:  left;
+}
+.whole_options .option_right {
+    width: 49%;
+    float: right;
+}
+.whole_options a {
+    background: #fff !important;
+    box-shadow:  none;
+    color: #111 !important;
+    text-align: left;
+    padding: 0;
+    border: none;
+    height: auto;
+    border: 1px solid #fff;
+        text-transform: none;
+}
+.whole_options h3 {
+    font-size: 19px;
+        padding: 10px 0 0 10px;
+        font-weight: 600;
+}
+.whole_options img.option_img {
+    background: #fff;
+    padding: 4px 0 4px 4px;
+}
+.whole_options a:hover {
+    border: 1px solid #517998;
+}
+.whole_options a:hover span.add-btn{
+    color: #517998 !important;
+ }
+ .whole_options a:hover span.add-btn .fa {
+    color: #0c83e2 !important;
+}
+.whole_options a span.add-btn {
+    padding-top: 8px;
+    width: 24%;
+    color: #fff;
+    padding: 8px 5px !important;
+}
+.add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar {
+    height: 45px !important;
+    min-height: 45px !important;
+    padding:  0 !important;
+}
+.add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar li.nav-item {
+    text-align:  right;
+    display:  inline-block;
+}
+.add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar ul.nav {
+    width: 100%;
+    text-align:  right;
+    display:  inline-block;
+}
+.add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar li.nav-item a {
+    margin-right: -5px;
+}
+.whole_options span.pl-2 {
+        padding-left: 2px !important;
+    width: 42%;
+    display: inline-block;
+    white-space: initial;
+    line-height: 21px;
+    vertical-align: middle;
+}
+.typ1 {
+    margin: 15px 0;
+}
+span.hd_spn {
+    font-size: 15px;
+    padding-left:  10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar {
+    border-bottom: 1px solid #c5c5c5;
+}
+
+/* By me 9sep */
+.seperator_line {
+  margin-top: -18px;
+  margin-bottom: 2em;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+button.seperatorButton, button.pageBreak {
+  background: #f5f5f5;
+}
+
+/* Custom Switch box */
+customSwitchBodyContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.64);
+  padding: 32px;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.switch-input {
+  display: none;
+}
+.switch-label {
+  position: relative;
+  display: inline-block;
+  min-width: 112px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  margin: 0;
+  padding: 0 0 0 40px;
+}
+.switch-label:before, .switch-label:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  outline: 0;
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.switch-label:before {
+  left: 1px;
+  width: 34px;
+  height: 14px;
+  background-color: #9E9E9E;
+  border-radius: 8px;
+}
+.switch-label:after {
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #FAFAFA;
+  border-radius: 50%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+}
+.switch-input:checked + .switch-label:before {
+  background-color: #5D92F4;
+  opacity: .8
+}
+.switch-input:checked + .switch-label:after {
+  background-color: #5D92F4;
+  -ms-transform: translate(80%, -50%);
+  -webkit-transform: translate(80%, -50%);
+  transform: translate(80%, -50%);
+}
+.switch-input:checked + .switch-label .toggle--on {
+  display: inline-block;
+}
+.switch-input:checked + .switch-label .toggle--off {
+  display: none;
+}
+
+/* Custom Switch box */
+/* By me 9sep */

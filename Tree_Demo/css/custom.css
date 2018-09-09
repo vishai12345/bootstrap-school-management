@@ -1,0 +1,159 @@
+.tree-containt{
+	position: relative;
+}
+.static-tree {
+	margin-top: 25px;
+}
+.static-node {
+    display: inline-block;
+    width: 49%;
+    float: left;
+}
+
+.static-tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+}
+.static-tree li a {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+.static-tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+a#node1:after {
+    content: "";
+    width: 455px;
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    transform: rotate(-174deg);
+    top: 39%;
+    left: 77%;
+} 
+
+a#node2:after {
+    content: "";
+    width: 459px;
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    transform: rotate(-6deg);
+    top: 8px;
+    left: 95%;
+}
+a#node2:before {
+    content: "<";
+    left: 17px;
+    position: absolute;
+    top: 17%;
+    font-weight: 900;
+    transform: rotate(-15deg);
+}
+a#node2:before {
+    content: "<";
+    left: 97%;
+    position: absolute;
+    top: 50%;
+    font-weight: 900;
+    transform: rotate(-15deg);
+}
+
+a#node4:before {
+    content: ">";
+    left: 0;
+    position: absolute;
+    top: 50%;
+    font-weight: 900;
+    transform: rotate(7deg);
+}
+.static-tree ul li:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+a#node5:after {
+    content: "";
+    width: 430px;
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    transform: rotate(0deg);
+    top: 70%;
+    left: 100%;
+}
+a#node5:before {
+    content: "<";
+    left: 100%;
+    position: absolute;
+    top: 55%;
+    font-weight: 900;
+    transform: rotate(0deg);
+}
+a#node6:before {
+    content: ">";
+    left: 0;
+    position: absolute;
+    top: 55%;
+    font-weight: 900;
+    transform: rotate(0deg);
+}
+
+a#node4:after {
+    content: "";
+    width: 430px;
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    transform: rotate(-6deg);
+    top: 125%;
+    left: -383%;
+}
+
+a#node6:after {
+    content: "";
+    width: 450px;
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    transform: rotate(5deg);
+    top: 30%;
+    left: -370%;
+}
+div.static-tree a#node6:after {
+    content: "";
+    width: 1px;
+    background: #000;
+    height: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: rotate(0deg);
+}
+div.tree {
+    margin-left: 16%;
+    margin-top: 15%;
+}
