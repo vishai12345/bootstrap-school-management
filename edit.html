@@ -316,7 +316,7 @@
             </div>
             <aside id="aside" class="aside aside-right" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="right">
                 <div class="aside-content-wrapper">
-                    <div class="aside-content bg-light text-auto">
+                    <div class="aside-content bg-light text-auto" id="drawerQuestionContentContainer">
                         <div class="aside-toolbar">
                             <span class="hd_spn">Add Question</span>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -1344,6 +1344,79 @@
 
                                 <div class="tab-pane fade" id="library-tab-pane" role="tabpanel" aria-labelledby="library-tab">
 
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <aside style="display: none" id="aside" class="aside aside-right" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="right">
+                <div class="aside-content-wrapper">
+                    <div class="aside-content bg-light text-auto" id="drawerIntroContentContainer">
+                        <div class="aside-toolbar">
+                            <span class="hd_spn">Add Intro</span>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link btn active" id="simple-tab" data-toggle="tab" href="#intro-simple-tab-pane" role="tab" aria-controls="intro-simple-tab-pane"
+                                        aria-expanded="true">Settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn" id="advance-tab" data-toggle="tab" href="#intro-advance-tab-pane" role="tab" aria-controls="intro-advance-tab-pane">Advance</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn" id="library-tab" data-toggle="tab" href="#intro-library-tab-pane" role="tab" aria-controls="intro-library-tab-pane">Theme</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="intro-simple-tab-pane" aria-labelledby="intro-simple-tab">
+                                    
+                                </div>
+
+                                <div class="tab-pane fade" id="intro-advance-tab-pane" role="tabpanel" aria-labelledby="intro-advance-tab">
+                                
+                                </div>
+
+                                <div class="tab-pane fade" id="intro-library-tab-pane" role="tabpanel" aria-labelledby="intro-library-tab">
+                                    <div class="row mt-3">
+                                        <div class="col-md-6 form-group">
+                                            <label for="questionBackgroundColor" class="col-md-12 col-form-label">Header Color</label>
+                                            <div class="d-flex justify-content-start ml-4">
+                                                <div class="questionBackgroundColor" style="background-color: rgb(207, 41, 58);"></div>
+                                                <div class="questionBackgroundColor" style="background-color: rgb(232, 232, 232);"></div>
+                                                <div class="questionBackgroundColor" style="background-color: black;"></div>
+                                                <div class="questionBackgroundColor" style="background-color: rgb(124, 179, 64);"></div>
+                                                <div class="questionBackgroundColor" style="background-color: rgb(245, 182, 50);"></div>
+                                                <div class="questionBackgroundColor" style="background-color: rgb(32, 148, 217);"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="bodyBackgroundColor" class="col-md-12 col-form-label">Body Color</label>
+                                            <div class="d-flex justify-content-start ml-4">
+                                                <div class="bodyBackgroundColor" style="background-color: rgb(207, 41, 58);"></div>
+                                                <div class="bodyBackgroundColor" style="background-color: rgb(232, 232, 232);"></div>
+                                                <div class="bodyBackgroundColor" style="background-color: black;"></div>
+                                                <div class="bodyBackgroundColor" style="background-color: rgb(124, 179, 64);"></div>
+                                                <div class="bodyBackgroundColor" style="background-color: rgb(245, 182, 50);"></div>
+                                                <div class="bodyBackgroundColor" style="background-color: rgb(32, 148, 217);"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="questionFontsize" class="col-md-12 col-form-label">Ouestion Font Size</label>
+                                            <div class="d-flex justify-content-start ml-4">
+                                                <div class="questionFontsize" style="background-color: lightgray;">10px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">12px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">14px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">16px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">18px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">20px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">22px</div>
+                                                <div class="questionFontsize" style="background-color: lightgray;">24px</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </ul>

@@ -6,7 +6,7 @@ const settings = {
     fontSizes: ['10px', '12px', '14px', '16px', '18px', '20px', '22px', '24px'],
     colors: ['#cf293a', '#e8e8e8','black', '#7cb340', '#f5b632', '#2094d9']
 }
-
+let renderDrawerQuestionSettingsContent = null
 let questions = []       
        
        $(document).ready(function () {
@@ -57,9 +57,9 @@ let questions = []
             $(document).on('click', '.toggle-source-preview', function (event){
                 event.preventDefault()
                 const parent = $(this).closest("tr")
-                const parentDiv = $(this).closest('div.example')
                 const editLayout = parent.find('div.custom-scrollbar')
                 editLayout.empty().html(editQuestionLayoutHtml(parent.attr('data-questionid')))
+                const parentDiv = $(this).closest('div.example')
                 parentDiv.toggleClass('show-source');
             });
 
@@ -86,9 +86,13 @@ let questions = []
                 const $backgroundColor = $this.css("background-color")
                 const $parentTr = $this.closest("tr")
                 const currentTrId = $parentTr.attr('data-questionid')
-                let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
-                questions[currentQuestionIndex].question.background = $backgroundColor
-                $parentTr.find('div.questionEle').css('background-color', $backgroundColor)
+                if($parentTr && currentTrId){
+                    let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
+                    questions[currentQuestionIndex].question.background = $backgroundColor
+                    $parentTr.find('div.questionEle').css('background-color', $backgroundColor)
+                }else{
+                    $('.questionEle').css('background-color', $backgroundColor)
+                }
             })
 
             $(document).on('click', '.bodyBackgroundColor', function(e){
@@ -97,9 +101,13 @@ let questions = []
                 const $backgroundColor = $this.css("background-color")
                 const $parentTr = $this.closest("tr")
                 const currentTrId = $parentTr.attr('data-questionid')
-                let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
-                questions[currentQuestionIndex].options.background = $backgroundColor
-                $parentTr.find('div.optionEle').css('background-color', $backgroundColor)
+                if($parentTr && currentTrId){
+                    let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
+                    questions[currentQuestionIndex].options.background = $backgroundColor
+                    $parentTr.find('div.optionEle').css('background-color', $backgroundColor)
+                }else{
+                    $('.optionEle').css('background-color', $backgroundColor)
+                }
             })
 
             $(document).on('click', '.questionFontsize', function(e){
@@ -108,9 +116,13 @@ let questions = []
                 const $fontSize = $this.text()
                 const $parentTr = $this.closest("tr")
                 const currentTrId = $parentTr.attr('data-questionid')
-                let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
-                questions[currentQuestionIndex].question.fontSize = $fontSize
-                $parentTr.find('div.questionEle').children('span').css('font-size', $fontSize)
+                if($parentTr && currentTrId){
+                    let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
+                    questions[currentQuestionIndex].question.fontSize = $fontSize
+                    $parentTr.find('div.questionEle').children('span').css('font-size', $fontSize)
+                }else{
+                    $('div.questionEle').children('span').css('font-size', $fontSize)
+                }
             })
 
             $(document).on('click', 'a.editQuestion', function(event){
@@ -209,17 +221,19 @@ let questions = []
                 e.preventDefault()
                 const parentConatiner = $(this).closest('div#editOptionsInBulkQuestionModal')
                 let options = parentConatiner.find('textarea.editOptionsInBulkQuestion').val()
-                options = options.split('\n').filter(opt => opt !== '')
-                const questionID = parentConatiner.find('textarea.editOptionsInBulkQuestion').attr('data-question_id')
-                questions = questions.map(ques => {
-                    if(ques.id == questionID){
-                        ques.options.list = options
-                        targetQuestion = ques
-                    }
-                    return ques
-                })
-                const parentTr = $('body').find(`[data-questionid='${questionID}']`)
-                parentTr.find('div.preview-elements').empty().append(returnQuestionHtml(targetQuestion))
+                if(options){
+                    options = options.split('\n').filter(opt => opt !== '')
+                    const questionID = parentConatiner.find('textarea.editOptionsInBulkQuestion').attr('data-question_id')
+                    questions = questions.map(ques => {
+                        if(ques.id == questionID){
+                            ques.options.list = options
+                            targetQuestion = ques
+                        }
+                        return ques
+                    })
+                    const parentTr = $('body').find(`[data-questionid='${questionID}']`)
+                    parentTr.find('div.preview-elements').empty().append(returnQuestionHtml(targetQuestion))
+                }
             })
 
             $(document).on('click', 'button.submitAddMoreOptionForm' , function(e){
@@ -254,6 +268,31 @@ let questions = []
                     return question
                 })
             })
+
+            $(document).on('click', 'button.add_quest_btn', function(e){
+                setTimeout(() => {
+                    if($('#drawerQuestionContentContainer').hasClass('hidden')){
+                        $('#drawerQuestionContentContainer').removeClass('hidden')
+                        $('#drawerIntroContentContainer').closest('aside').css('display', 'none')
+                        $('#drawerQuestionContentContainer').closest('aside').css('display', 'block')
+                    }
+                },500)
+            })
+
+            $(document).on('click', 'button.add_intro_btn', function(e){
+                setTimeout(() => {
+                    $('#drawerQuestionContentContainer').addClass('hidden').closest('aside').css('display', 'none')
+                    $('#drawerIntroContentContainer').closest('aside').css('display', 'block')
+                },500)
+            })
+
+            $('.label-cbx').popover({
+                title: "Action", 
+                content: "<select><option>Hello</option><option>Hello</option><option>Hello</option><option>Hello</option><option>Hello</option></select>",
+                html: true, 
+                placement: "right", 
+                trigger: "click"
+            }); 
         });
 
         function calculateRow(row) {
@@ -295,9 +334,7 @@ let questions = []
             if(questionObj.type === 'checkbox'){
                 return `
                     <div class='form-group'>
-                        <div class="questionEle form-group" style="padding: 10px; background-color: ${questionObj.question.background};">
-                            <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
-                        </div>
+                        ${renderQuestionTitleHtml(questionObj)}
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
                             ${renderQuestionOptions(questionObj)}
                         </div>
@@ -307,9 +344,7 @@ let questions = []
             } else if(questionObj.type === 'radio'){
                 return `
                     <div class='form-group'>
-                        <div class="questionEle form-group" style="padding: 10px; background-color: ${questionObj.question.background};">
-                            <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
-                        </div>
+                        ${renderQuestionTitleHtml(questionObj)}
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
                             ${renderQuestionOptions(questionObj)}
                         </div>
@@ -319,9 +354,7 @@ let questions = []
             } else if(questionObj.type === 'dropdown'){
                 return `
                     <div class='form-group'>
-                        <div class="questionEle form-group" style="padding: 10px; background-color: ${questionObj.question.background};">
-                            <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
-                        </div>
+                        ${renderQuestionTitleHtml(questionObj)}
                         <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
                             <select class="form-control">
                                 ${renderQuestionOptions(questionObj)}
@@ -335,6 +368,14 @@ let questions = []
             }
         }
 
+        function renderQuestionTitleHtml(questionObj){
+            return `
+                <div class="questionEle form-group" style="padding: 10px; background-color: ${questionObj.question.background};">
+                    <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
+                </div>
+            `
+        }
+
         function renderQuestionOptions(questionObj){
             let optionsHtml = ''
             questionObj.options.list.map((option, index) => {
@@ -346,7 +387,7 @@ let questions = []
         function renderOption(option, questionObj, index){
             if(questionObj.type === 'checkbox'){
                 return `
-                    <label for="cbx1_${questionObj.id}_${index}" class="label-cbx my-1">
+                    <label for="cbx1_${questionObj.id}_${index}" class="label-cbx my-1 cbx1_${questionObj.id}_${index}">
                         <input id="cbx1_${questionObj.id}_${index}" type="checkbox" class="invisible">
                         <div class="checkbox">
                             <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -359,7 +400,7 @@ let questions = []
                 `
             }else if(questionObj.type === 'radio'){
                 return `
-                    <label for="input1_${questionObj.id}_${index}">
+                    <label for="input1_${questionObj.id}_${index}" class="input1_${questionObj.id}_${index}">
                         <input id="input1_${questionObj.id}_${index}" name="radio" type="radio"> 
                         ${option}
                     </label>
@@ -375,16 +416,16 @@ let questions = []
             return `
                 <div class="custom-tab-style">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#Setting${$questionId}">Home</a></li>
+                        <li class="active"><a data-toggle="tab" href="#Setting${$questionId}">Setting</a></li>
                         <li><a data-toggle="tab" href="#AdvanceSetting${$questionId}">Advance Setting</a></li>
                         <li><a data-toggle="tab" href="#Theme${$questionId}">Theme</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="Setting${$questionId}" class="tab-pane fade in active">
-                            <div class="row mt-3">
-                                <div class="col-md-6 form-group">
+                        <div id="Theme${$questionId}" class="tab-pane fade in active">
+                            <div class="mt-3">
+                                <div class="col-md-6">
                                     <label for="questionBackgroundColor" class="col-md-4 col-form-label">Header Color</label>
-                                    <div class="d-flex justify-content-start ml-3">
+                                    <div class="d-flex justify-content-start ml-4">
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: black; margin-right: 10px;"></div>
@@ -393,9 +434,9 @@ let questions = []
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 form-group">
+                                <div class="col-md-6">
                                     <label for="bodyBackgroundColor" class="col-md-4 col-form-label">Body Color</label>
-                                    <div class="d-flex justify-content-start ml-3">
+                                    <div class="d-flex justify-content-start ml-4">
                                         <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
                                         <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
                                         <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: black; margin-right: 10px;"></div>
@@ -406,7 +447,7 @@ let questions = []
                                 </div>
                                 <div class="col-md-6">
                                     <label for="questionFontsize" class="col-md-4 col-form-label">Ouestion Font Size</label>
-                                    <div class="d-flex justify-content-start ml-3">
+                                    <div class="d-flex justify-content-start ml-4">
                                         <div class="questionFontsize" style="background-color: lightgray; margin-right: 5px; padding: 5px;">10px</div>
                                         <div class="questionFontsize" style="background-color: lightgray; margin-right: 5px; padding: 5px;">12px</div>
                                         <div class="questionFontsize" style="background-color: lightgray; margin-right: 5px; padding: 5px;">14px</div>
@@ -420,7 +461,7 @@ let questions = []
                             </div>
                         </div>
                         <div id="AdvanceSetting${$questionId}" class="tab-pane fade"></div>
-                        <div id="Theme${$questionId}" class="tab-pane fade"></div>
+                        <div id="Setting${$questionId}" class="tab-pane fade"></div>
                     </div>
                 </div>
             `

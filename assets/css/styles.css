@@ -1211,3 +1211,26 @@ customSwitchBodyContainer {
 
 /* Custom Switch box */
 /* By me 9sep */
+/* by me 10Sep */
+.questionBackgroundColor , .bodyBackgroundColor{
+  width: 40px; 
+  height: 30px; 
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.questionFontsize{
+  cursor: pointer;
+  margin-right: 5px; 
+  padding: 5px;
+}
+
+.questionEle, .optionEle{
+  transition: all 0.5s ease;
+  background-color: #fff
+}
+
+.questionEle span{
+  transition: all 0.5s ease;
+  font-size: 17px
+}
