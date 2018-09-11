@@ -10,6 +10,7 @@ let renderDrawerQuestionSettingsContent = null
 let questions = []       
        
        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip(); 
             $("#toggle-fold-aside-button").trigger('click');
             var counter = 0;
 
@@ -30,6 +31,7 @@ let questions = []
                         fontSize: settings.deafultOptionFontSize,
                         list: ['option 1', 'option 2', 'option 3', 'option 4']
                     },
+                    alignMent: 'vertical',
                     type: QuestionType.toLowerCase(),
                     id: questions.length + 1
                 }
@@ -43,7 +45,7 @@ let questions = []
                 var newRow = $(`<tr data-questionid='${newQuestionObj.id}'>`);
                 var cols = "";
 
-                cols += `<div class="add_quest example w-100"> <div class="description"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="javascript:void(0);" class="myanchor changeQuestionTypeButton mr-1"><span class="fa fa-cog"></span> <span>Setting</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-files-o"></span> <span>Copy</span></a> <a href="" class="myanchor mr-1"><span class="fa fa-cogs"></span><span>Logic</span></a> <a href="javascript:void(0);" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span> <span>Edit</span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
+                cols += `<div class="add_quest example w-100"> <div class="description"> <div class="description-text"> </div><div style="margin-left: auto !important;"> <a href="javascript:void(0);" data-toggle="tooltip" title="Settings" class="myanchor changeQuestionTypeButton mr-1"><span class="fa fa-cog"></span></a> <a href="javascript:void(0);" data-toggle="tooltip" title="Copy" class="myanchor mr-1"><span class="fa fa-files-o"></span></a> <a href="javascript:void(0);" data-toggle="tooltip" title="Logic" class="myanchor mr-1"><span class="fa fa-cogs"></span></a> <a href="javascript:void(0);" data-toggle="tooltip" title="Edit" class="editQuestion myanchor mr-1"><span class="fa fa-pencil-square-o"></span></a> </div><div class="toggle-source-preview"> <i class="icon icon-code-tags"></i> <i class="icon icon-eye-outline"></i> </div></div><div class="source-preview-wrapper"> <div class="preview"> <div class="preview-elements col-md-12">${questionEleHtml}</div></div><div class="source custom-scrollbar"> <div class="highlight"> <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> <code class="language-html" data-lang="html"> &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-danger&#34;</span>&gt;DANGER&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-dark&#34;</span>&gt;DARK&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-info&#34;</span>&gt;INFO&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-light&#34;</span>&gt;LIGHT&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-primary&#34;</span>&gt;PRIMARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-secondary&#34;</span>&gt;SECONDARY&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-success&#34;</span>&gt;SUCCESS&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-warning&#34;</span>&gt;WARNING&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; &lt;<span style="color:#000080;font-weight:bold">button</span> <span style="color:#f00">type</span>=<span style="color:#00f">&#34;button&#34;</span> <span style="color:#f00">class</span>=<span style="color:#00f">&#34;btn btn-link&#34;</span>&gt;Link&lt;/<span style="color:#000080;font-weight:bold">button</span>&gt; </code> </pre> </div></div></div></div>`;
 
                 cols += `<td><input type="button" class="add_question_button btn btn-md btn-secondary"  value="Add Question"></td><input type="button" class="seperatorButton btn btn-md btn-outline-info" value="Sepertor" style="float: right"><input type="button" class="pageBreak btn btn-md btn-outline-info" value="Page Break" style="float: right">`;
                 newRow.append(cols);
@@ -153,6 +155,7 @@ let questions = []
 
             $(document).on('click', '.changeQuestionTypeButton', function(e){
                 e.preventDefault()
+                return false;
                 const $this = $(this)
                 const $currentTrId = $this.closest("tr").attr('data-questionid')
                 let $currentQuestionForEdit = questions.find(question => question.id == $currentTrId)
@@ -172,6 +175,22 @@ let questions = []
                     $this.closest("tr").find('.preview-elements').empty().html(returnQuestionHtml($currentQuestionForEdit)).css('display', 'block')
                     $this.closest("tr").find('.editOptionInBulkHtml').remove()
                 }
+            })
+
+            $(document).on('click', 'input[name="questionType"], input[name="questionAlignMent"]', function(e){
+                const $this = $(this)
+                const $currentTrId = $this.closest("tr").attr('data-questionid')
+                let $currentQuestionForEdit = questions.find(question => question.id == $currentTrId)
+                const updatedQuestionData = $(this).closest("tr").find('form.editOptionInBulkHtml').serializeArray()
+                updatedQuestionData.map(questionRow => {
+                    if(questionRow.name == 'questionType'){
+                        $currentQuestionForEdit.type = questionRow.value
+                    }
+                    if(questionRow.name == 'questionAlignMent'){
+                        $currentQuestionForEdit.alignMent = questionRow.value
+                    }
+                })
+                $this.closest("tr").find('.preview-elements').empty().html(returnQuestionHtml($currentQuestionForEdit))
             })
 
             $(document).on('click', '.pageBreak' , function(event){
@@ -293,6 +312,12 @@ let questions = []
                 placement: "right", 
                 trigger: "click"
             }); 
+
+            $(document).on('click', 'div.source-preview-wrapper div.preview div.preview-elements div.form-group', function(e){
+                $(this).closest('.add_quest').find('div.description').find('a.myanchor').find('span.fa').each(function(index){
+                    $(this).css('display' ,'none')
+                })
+            })
         });
 
         function calculateRow(row) {
@@ -310,56 +335,77 @@ let questions = []
 
         function getQuestionTypeHtml(questionObj){
             return `
-                <form class="editOptionInBulkHtml">
+                <form class="editOptionInBulkHtml pl-5 pt-5">
                     <input type="hidden" name="questionID" value="${questionObj.id}">
-                    <label for="input1_${questionObj.id}_1">
-                        <input id="input1_${questionObj.id}_1" name="questionType" type="radio" value="checkbox"> 
+                    <h5>Question Type</h5>
+                    <label for="input1_type_${questionObj.id}_1">
+                        <input id="input1_type_${questionObj.id}_1" name="questionType" type="radio" value="checkbox"> 
                         Checkbox
                     </label>
                     <br />
-                    <label for="input1_${questionObj.id}_2">
-                        <input id="input1_${questionObj.id}_2" name="questionType" type="radio" value="radio"> 
+                    <label for="input1_type_${questionObj.id}_2">
+                        <input id="input1_type_${questionObj.id}_2" name="questionType" type="radio" value="radio"> 
                         Radio
                     </label>
                     <br />
-                    <label for="input1_${questionObj.id}_3">
-                        <input id="input1_${questionObj.id}_3" name="questionType" type="radio" value="dropdown"> 
+                    <label for="input1_type_${questionObj.id}_3">
+                        <input id="input1_type_${questionObj.id}_3" name="questionType" type="radio" value="dropdown"> 
                         Dropdown
+                    </label>
+                    <br/>
+                    <h5>Question Alignment</h5>
+                    <label for="input1_alignment_${questionObj.id}_2">
+                        <input id="input1_alignment_${questionObj.id}_2" name="questionAlignMent" type="radio" value="horizontal"> 
+                        Horizontal
+                    </label>
+                    <br />
+                    <label for="input1_alignment_${questionObj.id}_3">
+                        <input id="input1_alignment_${questionObj.id}_3" name="questionAlignMent" type="radio" value="vertical"> 
+                        Vertical
                     </label>
                 </form>
             `
+        }
+
+        function renderQuestionTtileAndOptions(questionObj){
+            if(questionObj.type === 'dropdown'){
+                return `
+                    ${renderQuestionTitleHtml(questionObj)}
+                    <div class="optionEle form-group ${questionObj.alignMent}" style="background-color: ${questionObj.options.background};">
+                        <select class="form-control">
+                            ${renderQuestionOptions(questionObj)}
+                        </select>
+                    </div>
+                `
+            }else{
+                return `
+                    ${renderQuestionTitleHtml(questionObj)}
+                    <div class="optionEle ${questionObj.alignMent} form-group" style="background-color: ${questionObj.options.background};">
+                        ${renderQuestionOptions(questionObj)}
+                    </div>
+                `
+            }
         }
 
         function returnQuestionHtml(questionObj){
             if(questionObj.type === 'checkbox'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTitleHtml(questionObj)}
-                        <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
-                            ${renderQuestionOptions(questionObj)}
-                        </div>
+                        ${renderQuestionTtileAndOptions(questionObj)}
                         ${renderExtraActionElement(questionObj)}
                     </div>
                 `
             } else if(questionObj.type === 'radio'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTitleHtml(questionObj)}
-                        <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
-                            ${renderQuestionOptions(questionObj)}
-                        </div>
+                        ${renderQuestionTtileAndOptions(questionObj)}
                         ${renderExtraActionElement(questionObj)}
                     </div>
                 `
             } else if(questionObj.type === 'dropdown'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTitleHtml(questionObj)}
-                        <div class="optionEle form-group" style="background-color: ${questionObj.options.background};">
-                            <select class="form-control">
-                                ${renderQuestionOptions(questionObj)}
-                            </select>
-                        </div>
+                        ${renderQuestionTtileAndOptions(questionObj)}
                         ${renderExtraActionElement(questionObj)}
                     </div>
                 `
@@ -422,8 +468,8 @@ let questions = []
                     </ul>
                     <div class="tab-content">
                         <div id="Theme${$questionId}" class="tab-pane fade in active">
-                            <div class="mt-3">
-                                <div class="col-md-6">
+                            <div class="mt-3 col-md-5">
+                                <div class="col-md-12">
                                     <label for="questionBackgroundColor" class="col-md-4 col-form-label">Header Color</label>
                                     <div class="d-flex justify-content-start ml-4">
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
@@ -434,7 +480,7 @@ let questions = []
                                         <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="bodyBackgroundColor" class="col-md-4 col-form-label">Body Color</label>
                                     <div class="d-flex justify-content-start ml-4">
                                         <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
@@ -445,7 +491,7 @@ let questions = []
                                         <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="questionFontsize" class="col-md-4 col-form-label">Ouestion Font Size</label>
                                     <div class="d-flex justify-content-start ml-4">
                                         <div class="questionFontsize" style="background-color: lightgray; margin-right: 5px; padding: 5px;">10px</div>
@@ -459,9 +505,16 @@ let questions = []
                                     </div>
                                 </div>
                             </div>
+                            <div class="mt-3 col-md-6">
+                                <div class="form-group">
+                                    ${renderQuestionTtileAndOptions(questions.find(question => question.id == $questionId))}
+                                </div>
+                            </div>
                         </div>
                         <div id="AdvanceSetting${$questionId}" class="tab-pane fade"></div>
-                        <div id="Setting${$questionId}" class="tab-pane fade"></div>
+                        <div id="Setting${$questionId}" class="tab-pane fade">
+                            ${getQuestionTypeHtml(questions.find(question => question.id == $questionId))}
+                        </div>
                     </div>
                 </div>
             `

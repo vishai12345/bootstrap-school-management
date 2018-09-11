@@ -845,10 +845,7 @@ div.creating_container_of_poll_wrappr_row_col {
   display:  none;
 }
 .add_quest .example.w-100 .description a.myanchor span.fa {
-  display:  block;
-}
-.add_quest .example.w-100:hover .description span {
-  display: inline-block !important;
+  display:  none !important;
 }
 
 .add_quest .example.w-100 .source-preview-wrapper .preview .preview-elements {
@@ -928,7 +925,7 @@ padding: 15px;
   display:  none;
 }
 .add_quest.example.w-100 .description a.myanchor span.fa {
-  display: block;
+  display: block !important;
 }
 .content.container {
   width: 100%;
