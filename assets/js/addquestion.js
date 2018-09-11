@@ -11,6 +11,9 @@ let questions = []
        
        $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip(); 
+            $(document).on('click', '.hide_drawer', function(){
+                $("#toggle-fold-aside-button").trigger('click');    
+            })
             $("#toggle-fold-aside-button").trigger('click');
             var counter = 0;
 

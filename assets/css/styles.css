@@ -1231,3 +1231,9 @@ customSwitchBodyContainer {
   transition: all 0.5s ease;
   font-size: 17px
 }
+
+.hide_drawer{
+  font-size: 25px; 
+  margin-left: 5px;
+  cursor: pointer;
+}
