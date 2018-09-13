@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/collapsable.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+  <title>Practice HTML with Javascript</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+<!--
+We will create a family tree using just CSS(3)
+The markup will be simple nested lists
+-->
+        <div class="static-tree">
+          <ul class="static-node">
+            <li>
+              <a href="#" id="node1" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+              <ul>
+                <li>
+                  <a href="#" id="node2" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#" id="node5" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="static-node">
+            <li>
+              <a href="#" id="node3" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+               <ul>
+                <li>
+                  <a href="#" id="node4" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                </li>
+              </ul>
+              
+               <ul>
+                <li>
+                  <a href="#" id="node6" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="tree">
+        <ul>
+          <li>
+            <a href="#" class="have_child" style="margin-top: 2em;">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span data-link="http://www.google.com" class="lnks_tooltip_wrap_inside graph-page-link" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i>
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+            <ul>
+              <li>
+                <a href="#" class="have_child">
+				   <span class="img_circle">
+				   <img src="img/node1.png">
+				   </span>
+				   <span class="lnks_tooltip_wrap">
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+				      Link1
+				      </span>
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+				      <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+				      </span>
+				      <!--Child1-->
+				   </span>
+				</a>
+                <ul>
+                  <li>
+<a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="have_child">
+				   <span class="img_circle">
+				   <img src="img/node1.png">
+				   </span>
+				   <span class="lnks_tooltip_wrap">
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+				      Link1
+				      </span>
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+				      <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+				      </span>
+				      <!--Child2-->
+				   </span>
+				</a>
+                <ul>
+                  <li><a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                  </li>
+                   <li><a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                  </li>
+                    <li><a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                  </li>
+                     <li><a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                  </li>
+                  <!-- <li>
+                    <a href="#">Grand Child2</a>
+                    <ul>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                      <li>
+                        <a href="#">Great Grand Child</a>
+                      </li>
+                    </ul>
+                  </li> -->
+                  <li><a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a></li>
+                </ul>
+              </li>
+              <li>
+                 <a href="#" class="have_child">
+				   <span class="img_circle">
+				   <img src="img/node1.png">
+				   </span>
+				   <span class="lnks_tooltip_wrap">
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+				      Link1
+				      </span>
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+				      <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+				      </span>
+				      <!--Child3-->
+				   </span>
+				</a>
+                <ul>
+                  <li>
+                     <a href="#" class="have_child">
+				   <span class="img_circle">
+				   <img src="img/node1.png">
+				   </span>
+				   <span class="lnks_tooltip_wrap">
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+				      Link1
+				      </span>
+				      <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+				      <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+				      </span>
+				      <!-- Grand Child-->
+				   </span>
+				</a>
+                     <ul>
+                      <li>
+                        <a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="have_child">
+           <span class="img_circle">
+           <img src="img/node1.png">
+           </span>
+           <span class="lnks_tooltip_wrap">
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+              Link1
+              </span>
+              <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps">
+              <i data-link="http://www.google.com" class="graph-page-link">
+                Link2
+              </i>
+              </span>
+              <!--Child1-->
+           </span>
+        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/collapsable.js"></script>
+<script src="js/custom.js"></script>
+<!-- tooltip -->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+</body>
+</html>

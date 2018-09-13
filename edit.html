@@ -72,6 +72,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Survey</a>
                                         </li>
+                                        <span class="lnks_tooltip_wrap_inside" data-toggle="tooltip" title="200 kbps &nbsp;&nbsp;&nbsp;&nbsp; 200kbps!">
+                      Link1
+                      </span>
                                         <li class="nav-item">
                                             <a class="nav-link btn" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Poll</a>
                                         </li>
@@ -483,7 +486,35 @@
                                                         </form>
                                                     </div>
                                                 </div>
-                                            </div>   
+                                            </div>  
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/rank-order.png" class="option_img">   
+                                                    <span class="pl-2">Rank Order</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Rank Order</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your rank order
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa-star-half-o"></span> <span class="fa-star-half-o"></span>
+                                                                    </p>                                                   
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>  
                                         </div>
                                         <!-- left side first type ends -->
                                         <!-- right side first type starts TEXT -->
@@ -678,86 +709,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="typ1">                                                
-                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
-                                                    <img src="images/push-to-social.png" class="option_img">   
-                                                    <span class="pl-2">Push To Social</span>
-                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
-                                                </a>
-                                                <div id="popover_content_wrapper" class="d-none">
-                                                    <h3 class="popover-header">Push To Social</h3>
-                                                    <div class="bg-white text-center p-2">
-                                                        <p>Ask your respondent to share answer to your list
-                                                            of answer choices.</p>
-                                                    </div>
-                                                    <div class="bg-my p-2 text-white">
-                                                        <form action="">
-                                                            <div class="form-group">
-                                                                <div class="popover_ques">
-                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
-                                                                </div>
-                                                                <div class="popover_option">                                                                
-                                                                    <p class="pop_span_fa">
-                                                                        <span class="fa fa-facebook"></span> <span class="fa fa-twitter"></span> <span class="fa fa-google-plus"></span> <span class="fa fa-instagram"></span>
-                                                                    </p>                                                    
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="typ1">                                                
-                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
-                                                    <img src="images/text-slider.png" class="option_img">   
-                                                    <span class="pl-2">Text Slider</span>
-                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
-                                                </a>
-                                                <div id="popover_content_wrapper" class="d-none">
-                                                    <h3 class="popover-header">Text Slider</h3>
-                                                    <div class="bg-white text-center p-2">
-                                                        <p>Ask your respondent to choose one answer from your list
-                                                            of answer choices of text slider.</p>
-                                                    </div>
-                                                    <div class="bg-my p-2 text-white">
-                                                        <form action="">
-                                                            <div class="form-group">
-                                                                <div class="popover_ques">
-                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
-                                                                </div>
-                                                                <div class="popover_option">                                                                
-                                                                    <input type="range" min="1" max="100" value="50">                                             
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="typ1">                                                
-                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
-                                                    <img src="images/numeric-slider.png" class="option_img">   
-                                                    <span class="pl-2">Numeric Slider</span>
-                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
-                                                </a>
-                                                <div id="popover_content_wrapper" class="d-none">
-                                                    <h3 class="popover-header">Numeric Slider</h3>
-                                                    <div class="bg-white text-center p-2">
-                                                        <p>Ask your respondent to choose one answer from your list
-                                                            of answer choices of text slider.</p>
-                                                    </div>
-                                                    <div class="bg-my p-2 text-white">
-                                                        <form action="">
-                                                            <div class="form-group">
-                                                                <div class="popover_ques">
-                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
-                                                                </div>
-                                                                <div class="popover_option">                                                                
-                                                                    <input type="range" min="1" max="100" value="50">                                             
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>   
+                                             
                                         </div>
                                         <!-- left side second type ends -->
                                         <!-- right side second type starts TEXT -->
@@ -902,10 +854,96 @@
                                                         </form>
                                                     </div>
                                                 </div>
+                                            </div>                                             
+                                        </div>
+
+                                        <div class="option_left">
+                                            <h3>Ordering</h3>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/push-to-social.png" class="option_img">   
+                                                    <span class="pl-2">Push To Social</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Push To Social</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to share answer to your list
+                                                            of answer choices.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <p class="pop_span_fa">
+                                                                        <span class="fa fa-facebook"></span> <span class="fa fa-twitter"></span> <span class="fa fa-google-plus"></span> <span class="fa fa-instagram"></span>
+                                                                    </p>                                                    
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/text-slider.png" class="option_img">   
+                                                    <span class="pl-2">Text Slider</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Text Slider</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list
+                                                            of answer choices of text slider.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="range" min="1" max="100" value="50">                                             
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="typ1">                                                
+                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
+                                                    <img src="images/numeric-slider.png" class="option_img">   
+                                                    <span class="pl-2">Numeric Slider</span>
+                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
+                                                </a>
+                                                <div id="popover_content_wrapper" class="d-none">
+                                                    <h3 class="popover-header">Numeric Slider</h3>
+                                                    <div class="bg-white text-center p-2">
+                                                        <p>Ask your respondent to choose one answer from your list
+                                                            of answer choices of text slider.</p>
+                                                    </div>
+                                                    <div class="bg-my p-2 text-white">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <div class="popover_ques">
+                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
+                                                                </div>
+                                                                <div class="popover_option">                                                                
+                                                                    <input type="range" min="1" max="100" value="50">                                             
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
 
 
-                                            <div class="bsic_mtrix">
+
+                                            <div class="option_right">
                                             <h3>Basic Matrix</h3>
                                             <div class="typ1">                                                
                                                 <a href="#" class="btn btn-primary btn-block mt-1 popper">
@@ -1050,43 +1088,9 @@
 
 
 
-                                        </div>
+                                        
 
-                                        <!-- third row of left & right starts -->
-                                        <div class="option_left">
-                                            <h3>Ordering</h3>
-                                            <div class="typ1">                                                
-                                                <a href="#" class="btn btn-primary btn-block mt-1 popper">
-                                                    <img src="images/rank-order.png" class="option_img">   
-                                                    <span class="pl-2">Rank Order</span>
-                                                    <span data-questionType="checkbox" class="add-btn float-right px-2">Add <i class="fa fa-plus mt-2"></i></span>
-                                                </a>
-                                                <div id="popover_content_wrapper" class="d-none">
-                                                    <h3 class="popover-header">Rank Order</h3>
-                                                    <div class="bg-white text-center p-2">
-                                                        <p>Ask your respondent to choose one answer from your rank order
-                                                            of answer choices.</p>
-                                                    </div>
-                                                    <div class="bg-my p-2 text-white">
-                                                        <form action="">
-                                                            <div class="form-group">
-                                                                <div class="popover_ques">
-                                                                    <span style="font-size: 17px">Which flavor of ice cream is your favourite?</span>
-                                                                </div>
-                                                                <div class="popover_option">                                                                
-                                                                    <p class="pop_span_fa">
-                                                                        <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa-star-half-o"></span> <span class="fa-star-half-o"></span>
-                                                                    </p>                                                   
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>   
-                                              
-                                        </div>
-                                        <!-- left side third type ends -->
-                                        <!-- right side third type starts TEXT -->
+                                        
 
                                         
 
@@ -1359,21 +1363,20 @@
                             <span class="hd_spn">Add Intro</span>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link btn active" id="simple-tab" data-toggle="tab" href="#intro-simple-tab-pane" role="tab" aria-controls="intro-simple-tab-pane"
-                                        aria-expanded="true">Settings</a>
+                                    <a class="nav-link btn" id="simple-tab" data-toggle="tab" href="#intro-simple-tab-pane" role="tab" aria-controls="intro-simple-tab-pane">Settings</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link btn" id="advance-tab" data-toggle="tab" href="#intro-advance-tab-pane" role="tab" aria-controls="intro-advance-tab-pane">Advance</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link btn" id="library-tab" data-toggle="tab" href="#intro-library-tab-pane" role="tab" aria-controls="intro-library-tab-pane">Theme</a>
+                                    <a class="nav-link btn active" id="library-tab" data-toggle="tab" href="#intro-library-tab-pane" role="tab" aria-controls="intro-library-tab-pane" aria-expanded="true">Theme</a>
                                 </li>
                             </ul>
                         </div>
 
                         <ul class="nav flex-column custom-scrollbar" id="sidenav" data-children=".nav-item">
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade show active" id="intro-simple-tab-pane" aria-labelledby="intro-simple-tab">
+                                <div role="tabpanel" class="tab-pane fade" id="intro-simple-tab-pane" aria-labelledby="intro-simple-tab">
                                     
                                 </div>
 
@@ -1381,7 +1384,7 @@
                                 
                                 </div>
 
-                                <div class="tab-pane fade" id="intro-library-tab-pane" role="tabpanel" aria-labelledby="intro-library-tab">
+                                <div class="tab-pane fade show active" id="intro-library-tab-pane" role="tabpanel" aria-labelledby="intro-library-tab">
                                     <div class="row mt-3">
                                         <div class="col-md-6 form-group">
                                             <label for="questionBackgroundColor" class="col-md-12 col-form-label">Header Color</label>
@@ -1594,6 +1597,8 @@
 
         </div>
     </main>
+
+
 </body>
 
 </html>

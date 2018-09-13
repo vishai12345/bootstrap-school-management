@@ -16,12 +16,12 @@ h1.heading {
 	-moz-transition: all 0.5s;
 }
 
-.tree li {
-	float: left; text-align: center;
+.tree li {text-align: center;
 	list-style-type: none;
 	position: relative;
 	padding: 20px 5px 0 5px;
-	
+	    margin: 0 -2px;
+    display: inline-table;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -108,3 +108,5 @@ right connector from last child*/
 
 /*Thats all. I hope you enjoyed it.
 Thanks :)*/
+
+

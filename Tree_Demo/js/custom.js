@@ -13,3 +13,12 @@ $(".tree a").click(function(){
 $(".static-tree #node6").click(function(){
   $(".tree").toggle();
 })
+
+$(".graph-page-link").click(function(){
+  var link = $(this).data('link');
+  console.log(link);  
+  window.open(
+  link,
+  '_blank'
+);
+})

@@ -431,52 +431,12 @@ nav.nav.popover-header a.nav-link {
 }
 
 @media screen and (max-width: 600px) {
-  table {
-    border: 0;
+.parent_body_container .example.w-100 .source-preview-wrapper tbody td:last-child {
+     width: auto !important;}
+   .add_quest.example.w-100 .description .description-text  .input-group .input-group-addon:first-child {
+      padding: 0 5px 0 0;
   }
 
-  table caption {
-    font-size: 1.3em;
-  }
-  
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-  
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  table td:last-child {
-    border-bottom: 0;
-  }
 }
 
 .pcard-filter{
@@ -709,6 +669,68 @@ UP
       margin-top: 20px;
   }
 
+  /* all table responsive */
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  .add_quest.example.w-100 .description .description-text {
+    width: 49%;
+    float:  left;
+}
+.add_quest.example.w-100 .description .description-text ~ div {
+    width: 51%;
+    float: left;
+}
+.add_quest.example.w-100 .description .toggle-source-preview {
+    position:  absolute;
+    right: -119px;
+    top: 45px;
+}
+
+
 
 }
 
@@ -889,7 +911,7 @@ div.creating_container_of_poll_wrappr_row_col {
   text-align: center;
 }
 .pollContainer img.pollBreadcrumImage {
-  width: 75%;
+  width: 90%;
 }
 .createPollContainer .createPoll {
   width: 50%;
@@ -912,10 +934,6 @@ text-decoration: none;
 display: block;
 padding: 15px;
 }
-.row.pollContainer {
-  border-bottom: 1px solid #464D69;
-    margin-bottom: 30px;
-}
 
 .add_quest.example.w-100 .description {
   padding:  10px;
@@ -930,7 +948,7 @@ padding: 15px;
 .content.container {
   width: 100%;
   max-width: 100% !important;
-  padding: 3% 3% 0;
+  padding: 1.5vw 1.5vw 0;
 }
 .custom-scrollbar.ps-container .myanchor {
   border:  none;
@@ -939,7 +957,7 @@ padding: 15px;
 .custom-scrollbar.ps-container a.myanchor.mr-1:nth-last-child(2) {
   display:  none;
 }
-.add_quest.example.w-100 .source-preview-wrapper tbody.searchable1 td:last-child {
+.parent_body_container .example.w-100 .source-preview-wrapper tbody td:last-child {
   width: 16%;
 }
 .header_mid {
@@ -1037,17 +1055,17 @@ input[type="radio"]:checked:after {
     left: 1.5px;
 }
 
-/* drawer designing */
+/* -- add question drawer design starts -- */
 .whole_options {
     float:  left;
     width: 100%;
 }
 .whole_options .option_left {
-    width: 49%;
+    width: 50%;
     float:  left;
 }
 .whole_options .option_right {
-    width: 49%;
+    width: 50%;
     float: right;
 }
 .whole_options a {
@@ -1062,22 +1080,25 @@ input[type="radio"]:checked:after {
         text-transform: none;
 }
 .whole_options h3 {
-    font-size: 19px;
-        padding: 10px 0 0 10px;
-        font-weight: 600;
+    font-size: 17px;
+    padding: 5px 0 5px 10px;
+    font-weight: 600;
+    color: #000000;
+    background: #e8e6e6;
+    float: left;
+    width: 100%;
 }
 .whole_options img.option_img {
     background: #fff;
     padding: 4px 0 4px 4px;
+    height: 27px;
 }
 .whole_options a:hover {
     border: 1px solid #517998;
 }
-.whole_options a:hover span.add-btn{
-    color: #517998 !important;
- }
- .whole_options a:hover span.add-btn .fa {
-    color: #0c83e2 !important;
+.add_quest a.btn.btn-primary.btn-block.mt-1.popper.fuse-ripple-ready:hover span.add-btn.float-right.px-2 {
+    background: #0c83e2;
+    color: #fff !important;
 }
 .whole_options a span.add-btn {
     padding-top: 8px;
@@ -1085,6 +1106,23 @@ input[type="radio"]:checked:after {
     color: #fff;
     padding: 8px 5px !important;
 }
+.whole_options .option_left {
+    border-right: 1px solid #dadada;
+}
+.whole_options .option_right .typ1 {
+    padding-left: 4px;
+}
+.whole_options .option_left:first-child .typ1:nth-child(2) .option_img, .whole_options .option_left:first-child .typ1:nth-child(3) .option_img {
+    height: 44px;
+}
+.whole_options .option_left, .whole_options .option_right {
+    border-bottom: none;
+}
+.whole_options .option_right:last-child .typ1:nth-child(2) img.option_img {
+    height: 21px;
+}
+
+/* -- add question drawer design ends -- */
 .add_quest_page_uniq .aside .aside-content-wrapper .aside-content.bg-light.text-auto .aside-toolbar {
     height: 45px !important;
     min-height: 45px !important;
@@ -1111,7 +1149,8 @@ input[type="radio"]:checked:after {
     vertical-align: middle;
 }
 .typ1 {
-    margin: 15px 0;
+    float: left;
+    width: 100%;
 }
 span.hd_spn {
     font-size: 15px;
@@ -1236,4 +1275,67 @@ customSwitchBodyContainer {
   font-size: 25px; 
   margin-left: 5px;
   cursor: pointer;
+}
+
+.add_quest.example.w-100 .source-preview-wrapper .dataTables_wrapper table thead tr th {padding-bottom:  12px;padding-top: 12px;}
+.bg-my .form-group {
+    padding-top: 5px;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+.bg-my .form-group .popover_ques {
+    margin-bottom: 7px;}
+.bg-my .form-group .popover_ques span {
+    font-size: 15px !important;
+}
+.bg-my .form-group .popover_option {
+    font-size: 14px;
+    font-weight:  normal;
+}
+.bg-my .form-group .popover_option label {
+    width: 100%;
+    font-weight: 300;
+}
+.bg-my .form-group .popover_option label input[type="radio"]:before {
+    background: #00acc1;
+    border: 2px solid #d4d4d4;
+}
+.bg-my .form-group .popover_option label:first-child input[type="radio"]:after {
+    content:  '';
+    background: #fff;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    top: 1px;
+    left: 2px;
+}
+.bg-my .form-group .popover_option label:first-child input[type="radio"]:before {
+    border-color: #20C2E0;
+    background: #20C2E0;
+}
+.bg-my .form-group .popover_option select {
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+    box-shadow: 0 2px 0 0 rgb(214, 214, 214);
+    color: #fff;
+}
+.poll_create .pollBreadcrum .pollBreadcrumContent {
+    padding: 30px 7% 0 0;
+    text-align: left;
+    line-height:  25px;
+}
+.poll_create.ps-container {
+    padding-top: 20px;
+}
+.poll_filed_creat .createPollInputELe {
+    border: 1px solid grey;
+    box-shadow:  none;
+    border-radius: 5px;
+    padding:  9px;
+    margin-bottom: 20px;
+}
+.poll_filed_creat {
+    padding: 30px 8% 0 0;
 }
