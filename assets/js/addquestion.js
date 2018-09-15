@@ -579,7 +579,7 @@ let questions = []
             return `
                 <div class="custom-tab-style">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#Setting${$questionId}">Setting</a></li>
+                        <li class="active"><a data-toggle="tab" class="active show" href="#Setting${$questionId}">Setting</a></li>
                         <li><a data-toggle="tab" href="#AdvanceSetting${$questionId}">Advance Setting</a></li>
                         <li><a data-toggle="tab" href="#Theme${$questionId}">Theme</a></li>
                     </ul>
@@ -639,8 +639,8 @@ let questions = []
                                 </div>
                             </div>
                         </div>
-                        <div id="AdvanceSetting${$questionId}" class="tab-pane fade in active show"></div>
-                        <div id="Setting${$questionId}" class="tab-pane fade">
+                        <div id="AdvanceSetting${$questionId}" class="tab-pane fade"></div>
+                        <div id="Setting${$questionId}" class="tab-pane fade in active show">
                             ${getQuestionTypeHtml(questions.find(question => question.id == $questionId))}
                         </div>
                     </div>
