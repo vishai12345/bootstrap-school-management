@@ -526,7 +526,6 @@ UP
   background:  transparent;
   padding:  0 !important;
   margin-bottom: 0;
-  border-bottom: 1px solid #e0e0e0;
   padding-bottom:  15px !important;
 }
 
@@ -902,7 +901,6 @@ div.creating_container_of_poll_wrappr_row_col {
 }
 .add_quest .example.w-100 {
   border: 4px solid transparent;
-  border-left: 4px solid #2196f3;
 }
 .add_quest .example.w-100 .description {
 } 
@@ -1009,7 +1007,7 @@ padding: 15px;
     color: #0c83e2;
     text-transform: none;
     font-size: 15px;
-    margin: 0px 0 7px 39px !important;
+    margin: 0px 0 7px 12px !important;
 }
 .delete_required_action_container {
     padding-top: 19px;
@@ -1248,7 +1246,7 @@ customSwitchBodyContainer {
 /* Custom Switch box */
 /* By me 9sep */
 /* by me 10Sep */
-.questionBackgroundColor , .bodyBackgroundColor{
+.questionBackgroundColor , .bodyBackgroundColor, .inlineQuestionStyle{
   width: 40px; 
   height: 30px; 
   margin-right: 10px;
@@ -1261,9 +1259,9 @@ customSwitchBodyContainer {
   padding: 5px;
 }
 
-.questionEle, .optionEle{
+.questionEle, .optionEle, .previewLayoutContainer{
   transition: all 0.5s ease;
-  background-color: #fff
+  background-color: transparent;
 }
 
 .questionEle span{
@@ -1338,4 +1336,7 @@ customSwitchBodyContainer {
 }
 .poll_filed_creat {
     padding: 30px 8% 0 0;
+}
+.hiddenLayout {
+  display: none;
 }

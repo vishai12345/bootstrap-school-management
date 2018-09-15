@@ -34,7 +34,7 @@ let questions = []
                         fontSize: settings.deafultOptionFontSize,
                         list: ['option 1', 'option 2', 'option 3', 'option 4']
                     },
-                    alignMent: 'vertical',
+                    alignMent: 'verticalView',
                     type: QuestionType.toLowerCase(),
                     id: questions.length + 1
                 }
@@ -89,14 +89,19 @@ let questions = []
                 e.preventDefault()
                 const $this = $(this)
                 const $backgroundColor = $this.css("background-color")
+                const questionLayout = $this.closest('div').attr('data-questionStyle');
                 const $parentTr = $this.closest("tr")
                 const currentTrId = $parentTr.attr('data-questionid')
                 if($parentTr && currentTrId){
                     let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
-                    questions[currentQuestionIndex].question.background = $backgroundColor
-                    $parentTr.find('div.questionEle').css('background-color', $backgroundColor)
+                    questions[currentQuestionIndex].questionLayout = questionLayout
+                    $parentTr.find('div.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '0px'})
+                    $parentTr.find('div.questionEle').css({ 'background-color': 'transparent' })
+                    $parentTr.find('div.questionEle span').css({ 'color': '#000' })
                 }else{
-                    $('.questionEle').css('background-color', $backgroundColor)
+                    $('.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '0px'})
+                    $('div.questionEle').css({ 'background-color': 'transparent' })
+                    $('div.questionEle span').css({ 'color': '#000' })
                 }
             })
 
@@ -104,14 +109,39 @@ let questions = []
                 e.preventDefault()
                 const $this = $(this)
                 const $backgroundColor = $this.css("background-color")
+                const questionLayout = $this.closest('div').attr('data-questionStyle');
                 const $parentTr = $this.closest("tr")
                 const currentTrId = $parentTr.attr('data-questionid')
                 if($parentTr && currentTrId){
                     let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
-                    questions[currentQuestionIndex].options.background = $backgroundColor
-                    $parentTr.find('div.optionEle').css('background-color', $backgroundColor)
+                    questions[currentQuestionIndex].questionLayout = questionLayout
+                    $parentTr.find('div.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '0px'})
+                    $parentTr.find('div.questionEle').css({ 'background-color': 'rgba(255, 255, 255, 0.2)', 'padding': '0px' })
+                    $parentTr.find('div.questionEle span').css({ 'color': '#000' })
                 }else{
-                    $('.optionEle').css('background-color', $backgroundColor)
+                    $('.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '0px'})
+                    $('div.questionEle').css({ 'background-color': 'rgba(255, 255, 255, 0.2)' })
+                    $('div.questionEle span').css({ 'color': '#000' })
+                }
+            })
+
+            $(document).on('click', '.inlineQuestionStyle', function(e){
+                e.preventDefault()
+                const $this = $(this)
+                const $backgroundColor = $this.css("background-color")
+                const questionLayout = $this.closest('div').attr('data-questionStyle');
+                const $parentTr = $this.closest("tr")
+                const currentTrId = $parentTr.attr('data-questionid')
+                if($parentTr && currentTrId){
+                    let currentQuestionIndex = questions.findIndex(question => question.id == currentTrId)
+                    questions[currentQuestionIndex].questionLayout = questionLayout
+                    $parentTr.find('div.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '15px'})
+                    $parentTr.find('div.questionEle').css({ 'background-color': 'rgba(0, 0, 0, 0.5)' })
+                    $parentTr.find('div.questionEle span').css({ 'color': '#fff' })
+                }else{
+                    $('.previewLayoutContainer').css({'background-color': $backgroundColor, 'padding': '15px'})
+                    $('div.questionEle').css({ 'background-color': 'rgba(0, 0, 0, 0.5)' })
+                    $('div.questionEle span').css({ 'color': '#fff' })
                 }
             })
 
@@ -316,10 +346,54 @@ let questions = []
                 trigger: "click"
             }); 
 
-            $(document).on('click', 'div.source-preview-wrapper div.preview div.preview-elements div.form-group', function(e){
-                $(this).closest('.add_quest').find('div.description').find('a.myanchor').find('span.fa').each(function(index){
-                    $(this).css('display' ,'none')
+            $(document).on('click', 'div.add_quest', function(e){
+                $(this).find('div.description').find('a.myanchor').css('display' ,'inline-block')
+            })
+
+            $(document).on('mouseleave', 'div.add_quest', function(e){
+                $(this).find('div.description').find('a.myanchor').css('display' ,'none')
+            })
+
+            $(document).on('click','.previewLayout', function(e){
+                if($(this).closest('div.preview').length){
+                    $(this).addClass('hiddenLayout')
+                    $(this).next('div').removeClass('hiddenLayout')
+                }
+            })
+
+            $(document).on('mouseleave','.editLayout', function(e){
+                $(this).addClass('hiddenLayout')
+                $(this).prev('div').find('span').text($(this).find('input').val());
+                const currentTrId = $(this).closest("tr").attr('data-questionid')
+                questions = questions.map(question => {
+                    if(question.id == currentTrId){
+                        question.options.list[$(this).find('input').attr('data-option_index')] = $(this).find('input').val();
+                    }
+                    return question;
                 })
+                $(this).prev('div').removeClass('hiddenLayout')
+            })
+
+            $(document).on('click', '.questionEle', function(e){
+                if($(this).closest('div.preview').length){
+                    $(this).addClass('hiddenLayout')
+                    $(this).next('div').removeClass('hiddenLayout')
+                }
+            })
+
+            $(document).on('mouseleave', '.questionEditEle', function(e){
+                if($(this).find('input').val()){
+                    $(this).addClass('hiddenLayout')
+                    $(this).prev('div').find('span').text($(this).find('input').val());
+                    const currentTrId = $(this).closest("tr").attr('data-questionid')
+                    questions = questions.map(question => {
+                        if(question.id == currentTrId){
+                            question.question.title = $(this).find('input').val();
+                        }
+                        return question;
+                    })
+                    $(this).prev('div').removeClass('hiddenLayout')
+                }
             })
         });
 
@@ -358,58 +432,58 @@ let questions = []
                     <br/>
                     <h5>Question Alignment</h5>
                     <label for="input1_alignment_${questionObj.id}_2">
-                        <input id="input1_alignment_${questionObj.id}_2" name="questionAlignMent" type="radio" value="horizontal"> 
+                        <input id="input1_alignment_${questionObj.id}_2" name="questionAlignMent" type="radio" value="horizontalView"> 
                         Horizontal
                     </label>
                     <br />
                     <label for="input1_alignment_${questionObj.id}_3">
-                        <input id="input1_alignment_${questionObj.id}_3" name="questionAlignMent" type="radio" value="vertical"> 
+                        <input id="input1_alignment_${questionObj.id}_3" name="questionAlignMent" type="radio" value="verticalView"> 
                         Vertical
                     </label>
                 </form>
             `
         }
 
-        function renderQuestionTtileAndOptions(questionObj){
+        function renderQuestionTtileAndOptions(questionObj, status = true){
             if(questionObj.type === 'dropdown'){
                 return `
-                    ${renderQuestionTitleHtml(questionObj)}
-                    <div class="optionEle form-group ${questionObj.alignMent}" style="background-color: ${questionObj.options.background};">
+                    ${renderQuestionTitleHtml(questionObj, status)}
+                    <div class="optionEle form-group ${questionObj.alignMent}">
                         <select class="form-control">
-                            ${renderQuestionOptions(questionObj)}
+                            ${renderQuestionOptions(questionObj, status)}
                         </select>
                     </div>
                 `
             }else{
                 return `
-                    ${renderQuestionTitleHtml(questionObj)}
-                    <div class="optionEle ${questionObj.alignMent} form-group" style="background-color: ${questionObj.options.background};">
-                        ${renderQuestionOptions(questionObj)}
+                    ${renderQuestionTitleHtml(questionObj, status)}
+                    <div class="optionEle ${questionObj.alignMent} form-group">
+                        ${renderQuestionOptions(questionObj, status)}
                     </div>
                 `
             }
         }
 
-        function returnQuestionHtml(questionObj){
+        function returnQuestionHtml(questionObj , status = true){
             if(questionObj.type === 'checkbox'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTtileAndOptions(questionObj)}
-                        ${renderExtraActionElement(questionObj)}
+                        <div class="previewLayoutContainer">${renderQuestionTtileAndOptions(questionObj, status)}</div>
+                        ${status ? renderExtraActionElement(questionObj) : ''}
                     </div>
                 `
             } else if(questionObj.type === 'radio'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTtileAndOptions(questionObj)}
-                        ${renderExtraActionElement(questionObj)}
+                        <div class="previewLayoutContainer">${renderQuestionTtileAndOptions(questionObj)}</div>
+                        ${status ? renderExtraActionElement(questionObj) : ''}
                     </div>
                 `
             } else if(questionObj.type === 'dropdown'){
                 return `
                     <div class='form-group'>
-                        ${renderQuestionTtileAndOptions(questionObj)}
-                        ${renderExtraActionElement(questionObj)}
+                        <div class="previewLayoutContainer">${renderQuestionTtileAndOptions(questionObj)}</div>
+                        ${status ? renderExtraActionElement(questionObj) : ''}
                     </div>
                 `
             }else{
@@ -417,48 +491,88 @@ let questions = []
             }
         }
 
-        function renderQuestionTitleHtml(questionObj){
+        function renderQuestionTitleHtml(questionObj, status = true){
             return `
-                <div class="questionEle form-group" style="padding: 10px; background-color: ${questionObj.question.background};">
-                    <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
+                <div>
+                    <div class="questionEle form-group" style="padding: 10px;">
+                        <span style="font-size: ${questionObj.question.fontSize}">${questionObj.question.title}</span>
+                    </div>
+                    ${status ? renderEditQuestionTitleHtml(questionObj) : ''}
                 </div>
             `
         }
 
-        function renderQuestionOptions(questionObj){
+        function renderEditQuestionTitleHtml(questionObj) {
+            return `
+                <div class="form-group questionEditEle hiddenLayout">
+                    <input value="${questionObj.question.title}" type="text" class="form-control" placeholder="Enter question" name="question">
+                </div>
+            `
+        }
+
+        function renderQuestionOptions(questionObj, status = true){
             let optionsHtml = ''
             questionObj.options.list.map((option, index) => {
-                optionsHtml += renderOption(option, questionObj, index)
+                optionsHtml += renderOption(option, questionObj, index, status)
             })
             return optionsHtml
         }
 
-        function renderOption(option, questionObj, index){
+        function renderEditLayoutOption(option, questionObj, index){
+            return `
+                <div class="editLayout hiddenLayout">
+                    <div class="form-group">
+                        <label for="option_${questionObj.id}_${index}">option ${index+1}:</label>
+                        <input data-option_index="${index}" value="${option}" type="text" class="form-control" id="option_${questionObj.id}_${index}" placeholder="Enter option ${index+1}" name="options">
+                    </div>
+                </div>
+            `
+        }
+
+        function renderOption(option, questionObj, index, status = true){
             if(questionObj.type === 'checkbox'){
                 return `
-                    <label for="cbx1_${questionObj.id}_${index}" class="label-cbx my-1 cbx1_${questionObj.id}_${index}">
-                        <input id="cbx1_${questionObj.id}_${index}" type="checkbox" class="invisible">
-                        <div class="checkbox">
-                            <svg width="20px" height="20px" viewBox="0 0 20 20">
-                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                                <polyline points="4 11 8 15 16 6"></polyline>
-                            </svg>
+                    <div class="optionaConatinerLayout">
+                        <div class="previewLayout">
+                            <label for="cbx1_${questionObj.id}_${index}" class="label-cbx my-1 cbx1_${questionObj.id}_${index}">
+                                <input id="cbx1_${questionObj.id}_${index}" type="checkbox" class="invisible">
+                                <div class="checkbox">
+                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                        <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                                        <polyline points="4 11 8 15 16 6"></polyline>
+                                    </svg>
+                                </div>
+                            </label>
+                            <span>${option}</span>
+                            ${ status ? renderRightArrow() : ''}
                         </div>
-                        <span>${option}</span>
-                    </label>
+                        ${ status ? renderEditLayoutOption(option, questionObj, index) : ''}
+                    </div>
                 `
             }else if(questionObj.type === 'radio'){
                 return `
-                    <label for="input1_${questionObj.id}_${index}" class="input1_${questionObj.id}_${index}">
-                        <input id="input1_${questionObj.id}_${index}" name="radio" type="radio"> 
-                        ${option}
-                    </label>
+                    <div class="optionaConatinerLayout">
+                        <div class="previewLayout">
+                            <label for="input1_${questionObj.id}_${index}" class="input1_${questionObj.id}_${index}">
+                                <input id="input1_${questionObj.id}_${index}" name="radio" type="radio"> 
+                            </label>
+                            <span>${option}</span>
+                            ${ status ? renderRightArrow() : ''}
+                        </div>
+                        ${ status ? renderEditLayoutOption(option, questionObj, index) : ''}
+                    </div>
                 `
             }else{
                 return `
                     <option>${option}</option>
                 `
             }
+        }
+
+        function renderRightArrow(){
+            return `
+                <span class="fa fa-angle-right"></span>
+            `
         }
 
         function editQuestionLayoutHtml ($questionId) {
@@ -470,28 +584,39 @@ let questions = []
                         <li><a data-toggle="tab" href="#Theme${$questionId}">Theme</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="Theme${$questionId}" class="tab-pane fade in active">
+                        <div id="Theme${$questionId}" class="tab-pane fade">
                             <div class="mt-3 col-md-5">
                                 <div class="col-md-12">
-                                    <label for="questionBackgroundColor" class="col-md-4 col-form-label">Header Color</label>
-                                    <div class="d-flex justify-content-start ml-4">
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: black; margin-right: 10px;"></div>
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(124, 179, 64); margin-right: 10px;"></div>
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(245, 182, 50); margin-right: 10px;"></div>
-                                        <div class="questionBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
+                                    <label for="questionBackgroundColor" class="col-md-4 col-form-label">Simple</label>
+                                    <div class="d-flex justify-content-start ml-4" data-questionStyle="simple">
+                                        <div class="questionBackgroundColor" style="background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
+                                        <div class="questionBackgroundColor" style="background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
+                                        <div class="questionBackgroundColor" style="background-color: black; margin-right: 10px;"></div>
+                                        <div class="questionBackgroundColor" style="background-color: rgb(124, 179, 64); margin-right: 10px;"></div>
+                                        <div class="questionBackgroundColor" style="background-color: rgb(245, 182, 50); margin-right: 10px;"></div>
+                                        <div class="questionBackgroundColor" style="background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="bodyBackgroundColor" class="col-md-4 col-form-label">Body Color</label>
-                                    <div class="d-flex justify-content-start ml-4">
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: black; margin-right: 10px;"></div>
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(124, 179, 64); margin-right: 10px;"></div>
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(245, 182, 50); margin-right: 10px;"></div>
-                                        <div class="bodyBackgroundColor" style="width: 30px; height: 30px; background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
+                                    <label for="bodyBackgroundColor" class="col-md-4 col-form-label">Boxed</label>
+                                    <div class="d-flex justify-content-start ml-4" data-questionStyle="boxed">
+                                        <div class="bodyBackgroundColor" style="background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
+                                        <div class="bodyBackgroundColor" style="background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
+                                        <div class="bodyBackgroundColor" style="background-color: black; margin-right: 10px;"></div>
+                                        <div class="bodyBackgroundColor" style="background-color: rgb(124, 179, 64); margin-right: 10px;"></div>
+                                        <div class="bodyBackgroundColor" style="background-color: rgb(245, 182, 50); margin-right: 10px;"></div>
+                                        <div class="bodyBackgroundColor" style="background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="bodyBackgroundColor" class="col-md-4 col-form-label">Inline</label>
+                                    <div class="d-flex justify-content-start ml-4" data-questionStyle="inline">
+                                        <div class="inlineQuestionStyle" style="background-color: rgb(207, 41, 58); margin-right: 10px;"></div>
+                                        <div class="inlineQuestionStyle" style="background-color: rgb(232, 232, 232); margin-right: 10px;"></div>
+                                        <div class="inlineQuestionStyle" style="background-color: black; margin-right: 10px;"></div>
+                                        <div class="inlineQuestionStyle" style="background-color: rgb(124, 179, 64); margin-right: 10px;"></div>
+                                        <div class="inlineQuestionStyle" style="background-color: rgb(245, 182, 50); margin-right: 10px;"></div>
+                                        <div class="inlineQuestionStyle" style="background-color: rgb(32, 148, 217); margin-right: 10px;"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -510,11 +635,11 @@ let questions = []
                             </div>
                             <div class="mt-3 col-md-6">
                                 <div class="form-group">
-                                    ${renderQuestionTtileAndOptions(questions.find(question => question.id == $questionId))}
+                                    ${returnQuestionHtml(questions.find(question => question.id == $questionId), false)}
                                 </div>
                             </div>
                         </div>
-                        <div id="AdvanceSetting${$questionId}" class="tab-pane fade"></div>
+                        <div id="AdvanceSetting${$questionId}" class="tab-pane fade in active show"></div>
                         <div id="Setting${$questionId}" class="tab-pane fade">
                             ${getQuestionTypeHtml(questions.find(question => question.id == $questionId))}
                         </div>
